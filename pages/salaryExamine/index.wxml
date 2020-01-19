@@ -1,0 +1,32 @@
+<view>
+    <view class='nav bg-white' style='height:{{navH}}px'>
+        <view class='nav-title'>
+            周薪审核
+        </view>
+        <view class='back'>
+            <image bindtap="handleBackClick" src="{{BASE_IMG_PATH}}back.png"></image>
+        </view>
+    </view>
+    <scroll-view class='bg-gray overflow' style='height:calc(100vh - {{navH}}px)' scroll-y>
+        <view class='hidden'>
+            <view class='item-1' wx:if="{{state === 0 || state === '0'}}">
+                <view class='img'>
+                    <image src="{{BASE_IMG_PATH}}zxsh-big.png"></image>
+                </view>
+                <view class='text'>数据采集中，请耐心等待...</view>
+            </view>
+            <view class='item-3' wx:if="{{state === 1 || state === '1'}}">
+                <view class='img'>
+                    <image src="{{BASE_IMG_PATH}}zxsh-kf.png"></image>
+                </view>
+                <view class='text'>您好，您的申请进入人工审核阶段，想了解审核进度可联系<text>平台客服人员</text></view>
+            </view>
+            <view class='item-2' wx:if="{{state === 3 || state === '3'}}">
+                <view class='img'>
+                    <image src="{{BASE_IMG_PATH}}zxsh-sb.png"></image>
+                </view>
+                <view class='text'>很抱歉，审核失败，如有问题请联系平台客服人员。</view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

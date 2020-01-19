@@ -1,0 +1,296 @@
+.nav {
+    position: relative;
+    height: 45px;
+    line-height: 45px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background: #fff;
+}
+
+.nav-title {
+    height: 45px;
+    line-height: 45px;
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 36rpx;
+    color: #000;
+}
+
+.nav .back {
+    position: absolute;
+    left: 20rpx;
+    top: 50%;
+    height: 48rpx;
+    bottom: 0;
+}
+
+.nav .back image {
+    display: block;
+    width: 38rpx;
+    height: 38rpx;
+}
+
+.overflow {
+    overflow: auto;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30rpx 30rpx 50rpx 30rpx;
+    background: #f6f6f6;
+}
+
+.hidden {
+    overflow: hidden;
+}
+
+.work-mess {
+    background: #fff;
+    padding: 40rpx 25rpx;
+}
+
+.work-mess .work-mess-title {
+    text-align: center;
+    color: #333333;
+    font-family: 'PingFang-SC-Bold';
+    font-weight: Bold;
+    font-size: 32rpx;
+}
+
+.work-mess .work-mess-name.item {
+    margin-top: 40rpx;
+    padding-bottom: 15rpx;
+}
+
+.work-mess .item view:nth-child(1),
+.work-mess .item view:nth-child(1) {
+    color: #333;
+    font-family: 'PingFang-SC-Medium';
+    font-weight: bold;
+    font-size: 30rpx;
+}
+
+.work-mess .item view:nth-child(2),
+.work-mess .item view:nth-child(2)  {
+    color: #666666;
+    font-family: 'PingFang-SC-Medium';
+    font-size: 28rpx;
+    margin-top: 15rpx;
+}
+
+.work-mess .item {
+    padding-bottom: 15rpx;
+    margin-top: 40rpx;
+    border-bottom: 1px solid #EFEFEF;
+}
+
+.pressing {
+    background: #fff;
+    padding: 40rpx 25rpx;
+    margin-top: 30rpx;
+}
+
+.pressing-title {
+    font-family: 'PingFang-SC-Bold';
+    font-size: 32rpx;
+    font-weight: Bold;
+    text-align: center;
+}
+
+.pressing-btn {
+    margin-top: 30rpx;
+}
+
+.pressing-btn view {
+    width: 100%;
+    height: 88rpx;
+    margin-bottom: 30rpx;
+}
+
+.pressing-btn view image {
+    width: 100%;
+    display: block;
+    height: 100%;
+}
+
+/* 工友亲友信息 */
+.friendInfo .friendInfo-item {
+    padding: 20rpx 0;
+}
+.friendInfo .bor-dashed {
+    border-bottom: 1px dashed #888888;
+}
+.friendInfo .bor-solid {
+    border-bottom: 1px solid #EFEFEF;
+}
+.friendInfo .friendInfo-item .title {
+    color: #333333;
+    font-size: 30rpx;
+    line-height: 70rpx;
+}
+
+.friendInfo .friendInfo-item .desc {
+    color: #666666;
+    font-size: 28rpx;
+    line-height: 70rpx;
+}
+.friendInfo-update {
+    margin-top: 50rpx;
+}
+.friendInfo-update image {
+    display: block;
+    width: 307rpx;
+    height: 64rpx;
+    margin: 0 auto;
+}
+
+/* 保存信息 */
+.save-mess {
+    margin: 40rpx 0;
+}
+
+.save-mess form {
+    display: block;
+    width: 100%;
+}
+.save-mess form .btn {
+    display: block;
+    width: 100%;
+    padding: 0;
+}
+.save-mess .btn image,
+.save-mess image {
+    display: block;
+    width: 100%;
+    height: 88rpx;
+}
+/*mask*/
+
+.drawer_screen {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    opacity: 0.5;
+}
+
+/*content*/
+
+.drawer_attr_box {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1999999;
+    background: #fff;
+    border-top-left-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+}
+
+.drawer_content {
+    padding: 67rpx 60rpx;
+}
+
+
+.drawer_title {
+    font: 32rpx "PingFang-SC-Bold";
+    color: #000;
+    font-weight: Bold;
+    text-align: center;
+}
+
+.drawer_desc {
+    color: #666666;
+    font-size: 28rpx;
+    font: 32rpx "PingFang-SC-Bold";
+    text-align: center;
+    margin-top: 20rpx;
+}
+
+.drawer_from {
+    margin-top: 30rpx;
+}
+
+.drawer_from view.item {
+    display: flex;
+    margin-bottom: 30rpx;
+}
+
+.drawer_from view text.name {
+    width: 30%;
+    color: #333333;
+    font-size: 30rpx;
+    font-family: 'PingFang-SC-Medium';
+    text-align: right;
+    line-height: 60rpx;
+}
+
+.drawer_from view .input {
+    font-size: 30rpx;
+    width: 70%;
+}
+.drawer_from view .input view input {
+    border: 1px solid #888888;
+    height: 60rpx;
+    line-height: 60rpx;
+    margin-bottom: 15rpx;
+    box-sizing: border-box;
+    padding: 0 15rpx;
+}
+.drawer_from view .input view .select {
+    width: 100%;
+}
+
+.drawer_from view .input view {
+    color: #999999;
+    font-size: 24rpx;
+}
+
+.drawer_from view .input view text {
+    color: #FB4F2F;
+}
+
+.drawer_save {
+    height: 88rpx;
+    margin-top: 40rpx;
+}
+
+.drawer_save image {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.main-content .big image {
+    display: block;
+    width: 100%;
+    height: 382rpx;
+}
+
+.main-content .desc {
+    color: #000000;
+    font-size: 34rpx;
+    font-family: 'PingFang-SC-Medium';
+    padding: 0 56rpx;
+    text-align: center;
+    margin-top: 55rpx;
+}
+
+.main-content .btn {
+    width: 100%;
+    height: 159rpx;
+}
+.main-content .btn image {
+    display: block;
+    width: 359rpx;
+    height: 159rpx;
+    margin: 0 auto;
+}

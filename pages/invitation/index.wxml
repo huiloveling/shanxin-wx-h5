@@ -1,0 +1,12 @@
+<view class="container">
+    <form bindsubmit="formSubmit" bindreset="formReset" report-submit="false">
+        <button open-type="share"></button>
+        <view>
+            <input name="phone" placeholder="请输入手机号" />
+        </view>
+        <view class="btn-area">
+            <button form-type="submit">Submit</button>
+            <button form-type="reset">Reset</button>
+        </view>
+    </form>
+</view>

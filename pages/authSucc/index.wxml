@@ -1,0 +1,18 @@
+<view>
+    <view class='nav bg-white' style='height:{{navH}}px'>
+        <view class='nav-title'>
+            身份证认证
+        </view>
+    </view>
+    <scroll-view class='bg-gray overflow' style='height:calc(100vh - {{navH}}px)' scroll-y>
+        <view class='hidden'>
+            <view class='big'>
+                <image src="{{BASE_IMG_PATH}}card-3.png"></image>
+            </view>
+            <view class='text'>恭喜您，认证完成</view>
+            <view class='btn'>
+                <image bindtap="handleNavigateTo" src="{{BASE_IMG_PATH}}ok.png"></image>
+            </view>
+        </view>
+    </scroll-view>
+</view>

@@ -1,0 +1,288 @@
+<view>
+    <view class='nav bg-white' style='height:{{navH}}px'>
+        <view class='nav-title'>
+            我的打卡
+        </view>
+    </view>
+    <scroll-view class='bg-gray overflow' style='height:calc(100vh - {{navH}}px)' scroll-y>
+        <view class='hidden'>
+            {{txt}}
+            <view class='news'>
+                <view class='news-icon'>
+                    <image src="{{BASE_IMG_PATH}}news.png"></image>
+                </view>
+                <view class='news-desc'>
+                    <swiper indicator-dots="{{indicatorDots}}" style="width: 100%;height: 80rpx;" circular="{{true}}" autoplay="{{true}}" vertical="{{true}}" interval="{{interval}}" duration="{{duration}}">
+                        <block wx:for="{{articles}}" wx:key="{{item}}">
+                            <swiper-item bindtap="handleNewsClick" data-readState="{{item.readState}}" data-id="{{item.id}}">
+                                {{item.title}}
+                            </swiper-item>
+                        </block>
+                    </swiper>
+                </view>
+            </view>
+            <view class='salary'>
+                <view class='salary-week'>
+                    <view class='item'>
+                        <image src='{{BASE_IMG_PATH}}big-3.png'></image>
+                        <view class='desc'>
+                            <view class='title'>本周可预领周薪</view>
+                            <view class='number'>{{currentWeekSalary}}
+                                <text>(元)</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class='item'>
+                        <image src='{{BASE_IMG_PATH}}big-4.png'></image>
+                        <view class='desc'>
+                            <view class='title'>下周可预领周薪</view>
+                            <view class='number'>{{nextWeekSalary}}
+                                <text>(元)</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class='salary-tips'>
+                    <text>温馨提示：</text>实际工资以单位实际考勤为准，此处仅做参考和在本平台领周薪使用，打卡天数越多可预领周薪越多！
+                </view>
+            </view>
+            <view class='calendar'>
+                <view class='calendar-title'>
+                    <view class='arrow-prev' bindtap='handleUpDate'>
+                        <image src='{{BASE_IMG_PATH}}arrow-prev.png'></image>
+                    </view>
+                    <view class='title'>{{calendarTitle}}</view>
+                    <view class='arrow-next' bindtap='handleDownDate'>
+                        <image src='{{BASE_IMG_PATH}}arrow-next.png'></image>
+                    </view>
+                </view>
+                <view class='calendar-week'>
+                    <view class='item'>日</view>
+                    <view class='item'>一</view>
+                    <view class='item'>二</view>
+                    <view class='item'>三</view>
+                    <view class='item'>四</view>
+                    <view class='item'>五</view>
+                    <view class='item'>六</view>
+                </view>
+                <view class='calendar-date'>
+                    <view wx:for="{{calendarData}}" wx:key="{{index}}" class="item">
+                        <view bindtap="handleClockRecord" data-currentDate="{{item.currentDate}}" data-workEndTime="{{item.workEndTime}}" data-workStartTime="{{item.workStartTime}}" class="day {{item.itemCurDay ? 'item-curDay' : ''}}">
+                            {{item.data}}
+                            <image wx:if="{{(item.workStartTime && !item.workEndTime && !item.itemCurDay) || (!item.workStartTime && item.workEndTime && !item.itemCurDay)}}" src="{{BASE_IMG_PATH}}s-k.png"></image>
+                            <image wx:if="{{item.workStartTime && item.workEndTime && !item.itemCurDay}}" src="{{BASE_IMG_PATH}}x-k.png"></image>
+                        </view>
+                    </view>
+                </view>
+                <view class='dk-btn' wx:if="{{isCanClock == '0'}}">
+                    <view style="flex: 1">
+                        <!-- <form report-submit="true"> -->
+                        <button data-current_day_type="1" wx:if="{{up_btn}}" bindtap="handleDownClock" style="background: #FA5C30;">上班打卡</button>
+                        <!-- </form> -->
+                        <button wx:else style="background: #ccc">上班打卡</button>
+                    </view>
+                    <view style="flex: 1">
+                        <button data-current_day_type="2" wx:if="{{down_btn}}" bindtap="handleDownClock" style="background: #FA5C30;">下班打卡</button>
+                        <button wx:else style="background: #ccc;">下班打卡</button>
+                    </view>
+                </view>
+                <view class='dk-btn' wx:if='{{isCanClock == "1"}}' style="margin-top: 40rpx;">
+                    <view class='text'>
+                        <text>{{isCanClockMsg}}</text>
+                    </view>
+                </view>
+                <view class='dk-btn' wx:if='{{isCanClock == "4"}}' style="margin-top: 40rpx;">
+                    <view class='text'>
+                        <text>{{isCanClockMsg}}</text>
+                    </view>
+                </view>
+                <view class='dk-btn' wx:if='{{isCanClock == "5"}}' style="margin-top: 40rpx;">
+                    <view class='text'>
+                        <text>很抱歉，个人信息审核失败请</text><text bindtap="handleToMessageClick" style="text-decoration:underline;">重新添加</text>
+                    </view>
+                </view>
+                <view class='dk-btn' wx:if='{{isCanClock == "6"}}' style="margin-top: 40rpx;">
+                    <view class='text'>
+                        <text>{{isCanClockMsg}}</text>
+                    </view>
+                </view>
+                <view class='dk-btn' wx:if='{{isCanClock == "7"}}' style="margin-top: 40rpx;">
+                    <view class='text'>
+                        <text>{{isCanClockMsg}}</text>
+                    </view>
+                </view>
+                <view class='dk-btn' wx:if="{{isCanClock == '8'}}">
+                    <view style="flex: 1;">
+                        <button bindtap="handleAgainLocation" style="background: #FA5C30">考勤范围外，重新定位</button>
+                    </view>
+                    <view style="flex: 1;">
+                        <button bindtap="handleNotClockReason" style="background: #FA5C30">考勤范围外原因</button>
+                    </view>
+                </view>
+                <view class='dk-btn' wx:if='{{isCanClock == "9"}}' style="margin-top: 40rpx;">
+                    <view class='text'>
+                        <text>{{isCanClockMsg}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class='service'>
+                <!-- <view bindtap="handleNav">
+                    <form bindsubmit="formSubmit" bindreset="formReset" report-submit="{{true}}">
+                        <button size='mini' form-type="submit">
+                            <image src="{{BASE_IMG_PATH}}gzt.png"></image>
+                            <text class='text'>工资条</text>
+                        </button>
+                    </form>
+                </view> -->
+                <view bindtap="handleToDk">
+                    <image src="{{BASE_IMG_PATH}}dksm.png"></image>
+                    <text class='text'>打卡说明</text>
+                </view>
+                <view>
+                    <button size='mini' open-type='contact'>
+                        <image src="{{BASE_IMG_PATH}}zxkf.png"></image>
+                        <text class='text'>在线客服</text>
+                    </button>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+    <!-- 登录页面 -->
+    <van-transition show="{{ showPopup }}">
+        <view class='van-popup'>
+            <view class='main'>
+                <view class='header'>
+                    <image src="./../../static/images/login-web.png"></image>
+                </view>
+                <view class='close'>
+                    <image bindtap="handleCloseShowPopup" src="{{BASE_IMG_PATH}}close-img.png"></image>
+                </view>
+                <view class='title'>
+                    劳动钱包
+                </view>
+                <view class='treaty'>
+                    <view style="padding: 0 40px; text-align: center;">
+                        微信登录后可进行领周薪、查看工资条
+                    </view>
+                </view>
+                <form bindsubmit="formSubmit" bindreset="formReset" report-submit="{{true}}">
+                    <button wx:if="{{!isLogin}}" form-type="submit" type="primary" open-type='getPhoneNumber' bindgetphonenumber='getPhoneNumber'>微信快捷登录</button>
+                    <button wx:else type="primary" bindtap="handleToLoginClick">微信快捷登录</button>
+
+                </form>
+            </view>
+        </view>
+    </van-transition>
+    <!-- 为认证状态 -->
+    <van-transition show="{{ showPopupCard }}">
+        <view class='popupCard'>
+            <view class='container-s'>
+                <image src="{{BASE_IMG_PATH}}tips.png"></image>
+                <view class='title'>{{isCanClockMsg}}</view>
+                <view class='btn'>
+                    <image bindtap="handleCard" src="{{BASE_IMG_PATH}}rz-btn.png"></image>
+                </view>
+            </view>
+        </view>
+    </van-transition>
+    <!-- 提交成功提示 -->
+    <van-transition show="{{ showPopupSubmission }}">
+        <view class='popupCard'>
+            <view class='container-s'>
+                <image src="{{BASE_IMG_PATH}}c1.png"></image>
+                <view class='title size'>
+                    您今天已经提交过，如有问题请联系客服沟通。
+                </view>
+                <view class='btn'>
+                    <image src="{{BASE_IMG_PATH}}zd.png"></image>
+                </view>
+            </view>
+        </view>
+    </van-transition>
+    <!-- 打卡记录 -->
+    <van-transition show="{{ showPopupClockRecord }}">
+        <view class='popupCard'>
+            <view class='container-s' style="height: 600rpx;">
+                <view class='clockRecord'>
+                    <view class='up'>
+                        <view>上班</view>
+                        <view wx:if="{{workstarttime}}">已打卡：{{currentDate}} {{workstarttime}}</view>
+                        <view wx:else style="color: #ccc;">无打卡记录</view>
+                    </view>
+                    <view class='down'>
+                        <view>下班</view>
+                        <view wx:if="{{workendtime}}">已打卡：{{currentDate}} {{workendtime}}</view>
+                        <view wx:else style="color: #ccc;">无打卡记录</view>
+                    </view>
+                    <view class='reminder'>
+                        <view>温馨提示</view>
+                        <view>打卡次数越多，可预支的工资越多，坚持打卡哦！</view>
+                    </view>
+                    <view class='btn'>
+                        <image bindtap="handleCloseClockRecord" src="{{BASE_IMG_PATH}}zd.png"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </van-transition>
+    <!-- 打卡失败列表 -->
+    <van-popup show="{{ showPopupAbnormal }}" close-on-click-overlay="true" position="bottom" overlay="{{ true }}" bind:close="onClose">
+        <view class='abnormal-view'>
+            <view class='close'>
+                <image bindtap="handleClosePopupAbnormal" src="{{BASE_IMG_PATH}}close-img.png"></image>
+            </view>
+            <view class='title'>很抱歉，您未进入考勤范围内不能打卡，请选择原因：</view>
+            <Select class='select' defaultText="{{defaultText}}" prop-array='{{selectArray}}' bind:myget='selectChange'></Select>
+            <!-- <button type="primary" bindtap="handleCommitCanNotClockReason">提交</button> -->
+            <image class='btn' bindtap="handleCommitCanNotClockReason" src="{{BASE_IMG_PATH}}tj-btn-img.png"></image>
+        </view>
+    </van-popup>
+    <!-- 打卡成功提示 -->
+    <van-transition show="{{ showPopupClockTips }}">
+        <view class='popupCard'>
+            <view class='container-s' style="height: 600rpx;">
+                <view class='clockTips clockRecord'>
+                    <view class='tilte-icon'>
+                        <image src="{{BASE_IMG_PATH}}location.png"></image>
+                        <view>{{addressData.address}}</view>
+                    </view>
+                    <view class='down'>
+                        <view>打卡成功</view>
+                        <view style="color: #ccc;">{{current_day_data.currentDate}} {{current_day_data_time}}</view>
+                    </view>
+                    <view class='reminder'>
+                        <view>温馨提示</view>
+                        <view>打卡次数越多，可预支的工资越多，坚持打卡哦！</view>
+                    </view>
+                    <view class='btn'>
+                        <image bindtap="handleCloseShowPopupClockTips" src="{{BASE_IMG_PATH}}zd.png"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </van-transition>
+    <!-- 打卡时间不足4小时提示 -->
+    <van-transition show="{{ showPopupClockInsufficient }}">
+        <view class='popupCard'>
+            <view class='container-s' style="height: 476rpx;">
+                <view class='clockTips clockRecord'>
+                    <view class='tilte-icon'>
+                        <image src="{{BASE_IMG_PATH}}location.png"></image>
+                        <view>{{addressData.address}}</view>
+                    </view>
+                    <view class='down'>
+                        <view style="text-align: center; font-size: 30rpx;">
+                            <text style="display: block;">距离上次打卡不足4小时，</text>
+                            <text style="display: block;">暂时不能打卡。</text>
+                        </view>
+                        <view style="color: #ccc;">上次打卡时间：{{current_day_data.currentDate}} {{current_day_data.workStartTime === null ? '' : current_day_data.workStartTime}}</view>
+                    </view>
+                    <view class='btn'>
+                        <image bindtap="handleCloseClockInsufficient" src="{{BASE_IMG_PATH}}zd.png"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </van-transition>
+    <van-toast id="van-toast" />
+</view>

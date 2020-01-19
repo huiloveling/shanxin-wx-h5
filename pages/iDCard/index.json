@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "modalView": "../../components/modal/modal"
+    },
+    "window": {
+        "navigationBarBackgroundColor": "red"
+    }
+}

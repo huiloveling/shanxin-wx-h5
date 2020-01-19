@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "van-checkbox": "./../../dist/checkbox/index",
+        "van-checkbox-group": "./../../dist/checkbox-group/index"
+    }
+}

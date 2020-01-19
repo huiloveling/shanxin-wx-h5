@@ -1,0 +1,9 @@
+    {
+    "navigationBarTitleText": "打卡",
+    "usingComponents": {
+        "van-popup": "./../dist/popup/index",
+        "van-transition": "./../dist/transition/index",
+        "van-toast": "./../dist/toast/index",
+        "Select": "../../components/select/select"
+    }
+}

@@ -1,0 +1,62 @@
+<view>
+    <view class='nav bg-white' style='height:{{navH}}px'>
+        <view class='nav-title'>
+            银行卡绑定
+        </view>
+        <view class='back'>
+            <image bindtap="handleBackClick" src="{{BASE_IMG_PATH}}back.png"></image>
+        </view>
+    </view>
+    <scroll-view class='bg-gray overflow' style='height:calc(100vh - {{navH}}px)' scroll-y>
+        <view class='hidden'>
+            <view class='container-wapr'>
+                <view class='item'>
+                    <view>持卡人姓名：</view>
+                    <view>{{bankData.name}}</view>
+                </view>
+                <view class='item'>
+                    <view>身份证号：</view>
+                    <view>{{bankData.idcard}}</view>
+                </view>
+                <view class='item'>
+                    <view>银行卡号：</view>
+                    <view>{{bankData.bankCard}}</view>
+                </view>
+                <view class='item'>
+                    <view>所属银行：</view>
+                    <view>{{bankData.bankName}}</view>
+                </view>
+                <view class='item'>
+                    <view>银行卡来源：</view>
+                    <view>{{bankData.bankSource}}</view>
+                </view>
+                <view class='item'>
+                    <view>银行卡预留手机号：</view>
+                    <view>
+                        <input value="{{user_phone}}" bindinput="handleInpueChange" placeholder="请输入手机号" />
+                    </view>
+                </view>
+                <view class='item'>
+                    <view>短信验证码：</view>
+                    <view class='code'>
+                        <input value="{{smscode}}" placeholder="请输入短信验证密码" bindinput="handleInpueChangemm" />
+                        <view>
+                            <image wx:if="{{!sendStatus}}" bindtap="preBindCard" src="{{BASE_IMG_PATH}}code-btn.png"></image>
+                            <text wx:else>{{sendTime}}s后重新获取</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class='treaty'>
+                <van-checkbox class='custom-class icon-class' checked-color="#FB4F2F" value="{{ checked }}" bind:change="onChange"></van-checkbox> <text bindtap="handleToBankcardAgreement">同意《银行卡绑定协议》</text>
+            </view>
+            <view class='bank-btn'>
+                <form bindsubmit="formSubmit" bindreset="formReset" report-submit="{{true}}">
+                    <button class="btn" bindtap="handleConfirmBindCard" size='mini' form-type="submit">
+                        <image src="{{BASE_IMG_PATH}}bank-btn.png"></image>
+                    </button>
+                </form>
+            </view>
+        </view>
+    </scroll-view>
+</view>

@@ -1,0 +1,55 @@
+<view>
+    <view class='container'>
+        <!-- <view bindtap="handleToNavClick" class='repaymentReminder' wx:if="{{data.waitRepayCount > 0}}">
+            周薪账单（{{data.waitRepayCount}}笔待还款）>>
+        </view> -->
+        <view class='view-list'>
+            <view class='item salary'>
+                <view>可领取周薪</view>
+                <view>{{data.weenSalary}}
+                    <text>(元)</text> </view>
+            </view>
+            <view class='item brokerage'>
+                <view>手续费
+                    <van-icon bindtap="handleTipClick" custom-style="icon" size="18px" name="info-o" />
+                </view>
+                <view>{{data.serviceFee}}
+                    <text>(元)</text> </view>
+            </view>
+            <view class='item repayment'>
+                <view>预计还款日</view>
+                <view>{{data.planRepayDate}}</view>
+                <view>
+                    如实际发薪日早于{{data.planRepayDate}}，则实际发薪日为还款日；反之{{data.planRepayDate}}为还款日。
+                </view>
+            </view>
+        </view>
+        <view class='checkbox'>
+            <van-checkbox class='custom-class' checked-color="#FB4F2F" value="{{ checked }}" bind:change="onChange"></van-checkbox>
+            <view>同意
+                <text bindtap="handle">《领周薪协议》</text>及
+                <text bindtap="loanContract">《借款协议》</text> </view>
+        </view>
+        <view class='btn'>
+            <form bindsubmit="formSubmit" bindreset="formReset" report-submit="{{true}}">
+                <button class="btn" bindtap="handleLoanApply" size='mini' form-type="submit">
+                    <image src="https://sxapi.wanjingyou.com.cn/static/images/salary-btn.png"></image>
+                </button>
+            </form>
+        </view>
+    </view>
+    <van-transition show="{{ showPopup }}">
+        <view class='popupCard'>
+            <view class='container-pup'>
+                <view class='images'>
+                    <image src="https://sxapi.wanjingyou.com.cn/static/images/aws.png"></image>
+                </view>
+                <view class='desc'>{{message}}</view>
+                <view class='btn'>
+                    <view bindtap="handleCloseClick">关闭</view>
+                    <view bindtap="handleConfirmClick" style="color: red">确定</view>
+                </view>
+            </view>
+        </view>
+    </van-transition>
+</view>

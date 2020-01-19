@@ -1,0 +1,30 @@
+<view>
+    <view class='nav bg-white' style='height:{{navH}}px'>
+        <view class='nav-title'>
+            公告
+        </view>
+        <view class='back'>
+            <image bindtap="handleBackClick" src="{{BASE_IMG_PATH}}back.png"></image>
+        </view>
+    </view>
+    <scroll-view class='bg-gray overflow' style='height:calc(100vh - {{navH}}px)' scroll-y>
+        <view class='hidden'>
+            <view class='view-list'>
+                <view
+                    bindtap="handleToTpl"
+                    data-readState="{{item.readState}}"
+                    data-id="{{item.id}}"
+                    class='view-list-item'
+                    wx:for="{{articles}}"
+                    wx:key="{{index}}"
+                    style="background-image: url({{item.readState === 0 ?                   'https://line.mimidai.com/static/img/shanxin/images/article_1.png' : 'https://line.mimidai.com/static/img/shanxin/images/article_2.png'}})"
+                >
+                    {{item.title}}
+                    <view class='view-icon'>
+                        <image src="{{BASE_IMG_PATH}}right-icon-img.png"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

@@ -1,0 +1,23 @@
+<view>
+    <view class='nav bg-white' style='height:{{navH}}px'>
+        <view class='nav-title'>
+            服务费支付
+        </view>
+        <view class='back'>
+            <image bindtap="handleBack" src="{{BASE_IMG_PATH}}back.png"></image>
+        </view>
+    </view>
+    <scroll-view class='bg-gray overflow' style='height:calc(100vh - {{navH}}px)' scroll-y>
+        <view class='hidden'>
+            <view class='images'>
+                <image src="{{BASE_IMG_PATH}}s-1.png"></image>
+            </view>
+            <view class='desc'>
+                <view>恭喜您完成支付，请前往【我的-历史周薪账单】内查看支付状态</view>
+            </view>
+        </view>
+        <view class='btn'>
+            <image bindtap="handleToNav" src="{{BASE_IMG_PATH}}slzx-btn.png"></image>
+        </view>
+    </scroll-view>
+</view>

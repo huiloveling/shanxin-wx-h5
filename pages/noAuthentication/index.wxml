@@ -1,0 +1,22 @@
+<view>
+    <view class='nav bg-white' style='height:{{navH}}px'>
+        <view class='nav-title'>
+            周薪
+        </view>
+    </view>
+    <scroll-view class='bg-gray overflow' style='height:calc(100vh - {{navH}}px)' scroll-y>
+        <view class='hidden'>
+            <view class='view-img'>
+                <image src="{{BASE_IMG_PATH}}noauth.png"></image>
+            </view>
+            <view class='view-desc'>
+                <text wx:if="{{state === '3'}}">很抱歉，您当前状态未登录，暂时不支持领周薪，请完成登录后进行领取周期。</text>
+                <text wx:else>亲爱的用户您好，你当前尚未完成认证流程，暂时不支持领周薪，完成认证后可进行领取周薪。</text>
+            </view>
+            <view class='view-btn'>
+                <button bindtap="handleToLoginClick" wx:if="{{state === '3'}}" style="color: #fff; width: 70%; background: #F67B33;">去登录</button>
+                <image wx:else bindtap="handleAuthClick" src="{{BASE_IMG_PATH}}auth-btn.png"></image>
+            </view>
+        </view>
+    </scroll-view>
+</view>

@@ -1,0 +1,78 @@
+.nav {
+    position: relative;
+    height: 45px;
+    line-height: 45px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background: #fff;
+}
+
+.nav-title {
+    height: 45px;
+    line-height: 45px;
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 36rpx;
+    color: #000;
+}
+
+.nav .back {
+    position: absolute;
+    left: 20rpx;
+    top: 50%;
+    height: 48rpx;
+    bottom: 0;
+}
+
+.nav .back image {
+    display: block;
+    width: 38rpx;
+    height: 38rpx;
+}
+
+.overflow {
+    overflow: auto;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30rpx 30rpx 50rpx 30rpx;
+    background: #f6f6f6;
+}
+
+.hidden {
+    overflow: hidden;
+}
+
+.view-list-item {
+    width: 630rpx;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 20rpx;
+    padding: 25rpx;
+    margin-bottom: 80rpx;
+}
+.view-list-item view {
+    line-height: 60rpx;
+    font-family: 'PingFang-SC-Medium';
+}
+.view-list-item view text:first-child {
+    font-size: 30rpx;
+    color: #333;
+    font-weight: 400;
+}
+.view-list-item view text:last-child {
+    font-size: 28rpx;
+    color: #666;
+    margin-left: 30rpx;
+}
+
+.btn image {
+    display: block;
+    height: 88rpx;
+    width: 502rpx;
+    margin: 0 auto;
+}

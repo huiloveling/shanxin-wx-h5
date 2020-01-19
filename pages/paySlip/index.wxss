@@ -1,0 +1,107 @@
+.nav {
+    position: relative;
+    height: 45px;
+    line-height: 45px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background: #fff;
+}
+
+.nav-title {
+    height: 45px;
+    line-height: 45px;
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 36rpx;
+    color: #000;
+}
+
+.nav .back {
+    position: absolute;
+    left: 20rpx;
+    top: 50%;
+    height: 48rpx;
+    bottom: 0;
+}
+
+.nav .back image {
+    display: block;
+    width: 38rpx;
+    height: 38rpx;
+}
+
+.overflow {
+    overflow: auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.hidden {
+    overflow: hidden;
+}
+.view-stepper {
+    display: flex;
+    color: #333;
+    font-size: 30rpx;
+    line-height: 50rpx;
+    height: 50rpx;
+}
+.view-stepper .view-stepper-item:nth-child(1) {
+    width: 60%;
+}
+.view-stepper .view-stepper-item:nth-child(2) {
+    width: 20%;
+}
+.view-stepper .view-stepper-item:nth-child(3) {
+    width: 20%;
+}
+.custom-class {
+    height: 500rpx !important;
+}
+.view-stepper .view-stepper-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.view-stepper .view-stepper-item image {
+    width: 31rpx;
+    height: 18rpx;
+    margin-left: 10rpx;
+}
+.view-stepper .view-stepper-item view {
+    overflow: hidden;
+}
+.view-list {
+    margin-top: 30rpx;
+}
+.view-list-item {
+    height: 100rpx;
+    line-height: 100rpx;
+    display: flex;
+    border-top: 1px solid #f5f5f5;
+}
+.view-list-item view {
+    flex: 1;
+    text-align: center;
+    font-size: 30rpx;
+    color: #333;
+    font-family: 'PingFang-SC-Medium';
+}
+
+.van-loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .4);
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

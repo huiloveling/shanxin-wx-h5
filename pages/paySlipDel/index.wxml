@@ -1,0 +1,26 @@
+<view>
+    <view class='nav bg-white' style='height:{{navH}}px'>
+        <view class='nav-title'>
+            工资条
+        </view>
+        <view class='back'>
+            <image bindtap="handleBackClick" src="{{BASE_IMG_PATH}}back.png"></image>
+        </view>
+    </view>
+    <view class='van-loading' wx:if="{{vanLoading}}">
+        <van-loading type="spinner" color="#07c160" />
+    </view>
+    <scroll-view class='bg-gray overflow' style='height:calc(100vh - {{navH}}px)' scroll-y>
+        <view class='hidden'>
+            <view class='view-list' wx:if="{{!state}}">
+                <view class='view-list-item' wx:for="{{list}}" wx:key="{{index}}">
+                    <view>{{item.key}}</view>
+                    <view>{{item.value}}</view>
+                </view>
+            </view>
+            <view wx:if="{{state}}" style="text-align: center;">
+                工资详情查询失败
+            </view>
+        </view>
+    </scroll-view>
+</view>

@@ -1,0 +1,79 @@
+{
+    "pages": [
+        "pages/login/index",
+        "pages/wageRecord/index",
+        "pages/iDCard/index",
+        "pages/serviceCharge/index",
+        "pages/faceDiscern/index",
+        "pages/message/index",
+        "pages/salary/index",
+        "pages/my/index",
+        "pages/repayment/index",
+        "pages/hstoryBill/index",
+        "pages/historySalaryBill/index",
+        "pages/salaryBill/index",
+        "pages/bankCard/index",
+        "pages/repaymentSucc/index",
+        "pages/clockIn/index",
+        "pages/bankList/index",
+        "pages/noAuthentication/index",
+        "pages/serviceChargeSucc/index",
+        "pages/tpl/index",
+        "pages/authSucc/index",
+        "pages/updatePhone/index",
+        "pages/bankInfo/index",
+        "pages/clockExplain/index",
+        "pages/index/index",
+        "pages/invitation/index",
+        "pages/authError/index",
+        "pages/contacts/index",
+        "pages/dsesign/index",
+        "pages/company/index",
+        "pages/salaryExamine/index",
+        "pages/set/index"
+    ],
+    "plugins": {
+        "calendar": {
+            "version": "1.1.3",
+            "provider": "wx92c68dae5a8bb046"
+        }
+    },
+    "permission": {
+        "scope.userLocation": {
+            "desc": "你的位置信息将用于小程序位置接口的效果展示"
+        }
+    },
+    "window": {
+        "navigationStyle": "custom",
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black",
+        "backgroundTextStyle": "light"
+    },
+    "sitemapLocation": "sitemap.json",
+    "tabBar": {
+        "color": "#999",
+        "selectedColor": "#FB4F2F",
+        "borderStyle": "white",
+        "backgroundColor": "#fff",
+        "list": [
+            {
+                "pagePath": "pages/clockIn/index",
+                "iconPath": "/static/images/dka.png",
+                "selectedIconPath": "/static/images/dk.png",
+                "text": "打卡"
+            },
+            {
+                "pagePath": "pages/salary/index",
+                "iconPath": "/static/images/zxa.png",
+                "selectedIconPath": "/static/images/zx.png",
+                "text": "周薪"
+            },
+            {
+                "pagePath": "pages/my/index",
+                "iconPath": "/static/images/my.png",
+                "selectedIconPath": "/static/images/mya.png",
+                "text": "我的"
+            }
+        ]
+    }
+}

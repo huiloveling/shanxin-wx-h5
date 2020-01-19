@@ -1,0 +1,9 @@
+view {
+    height: 100vh;
+    width: 100%;
+}
+view image {
+    display: block;
+    width: 100%;
+    height: 100%;
+}

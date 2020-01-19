@@ -1,0 +1,25 @@
+<view>
+    <view class='nav bg-white' style='height:{{navH}}px'>
+        <view class='nav-title'>设置</view>
+        <view class='back'>
+            <image bindtap="handleBackClick" src="{{BASE_IMG_PATH}}back.png"></image>
+        </view>
+    </view>
+    <scroll-view class='bg-gray overflow' style='height:calc(100vh - {{navH}}px)' scroll-y>
+        <view class='hidden'>
+            <view class='view-list' wx:for="{{viewlist}}" wx:key="{{index}}">
+                <view class='view-list-item' bindtap="handleNavigateTo" data-url="{{item.nextPath}}">
+                    <view class='img'>
+                        <image style="width: 46rpx;height: 35rpx;" src="{{item.imgurl}}"></image>
+                    </view>
+                    <view class='title'>
+                        <view>{{item.title}}</view>
+                        <view>
+                            <image src="{{item.icon}}"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view> 

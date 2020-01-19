@@ -1,0 +1,54 @@
+<view>
+    <view class='nav bg-white' style='height:{{navH}}px'>
+        <view class='nav-title'>
+            历史周薪账单
+        </view>
+        <view class='back'>
+            <image bindtap="handleBackClick" src="{{BASE_IMG_PATH}}back.png"></image>
+        </view>
+    </view>
+    <scroll-view class='bg-gray overflow' style='height:calc(100vh - {{navH}}px)' scroll-y>
+        <view class='hidden'>
+            <view class='tab-container'>
+                <view bindtap="handleNotFinishList" style="background: {{!active ? '#ffe4de' : '#fff'}}">未完结</view>
+                <view bindtap="handleFinishList" style="background: {{active ? '#ffe4de' : '#fff'}}">已完结</view>
+            </view>
+            <view class='view-list'>
+                <view
+                    class='view-list-item'
+                    wx:for="{{list}}"
+                    wx:key="{{index}}"
+                    data-loanApplyId="{{item.loanApplyId}}"
+                    bindtap="handleBillDetail"
+                >
+                    <view class='view-list-item-img'>
+                        <image src="{{BASE_IMG_PATH}}sst-img.png"></image>
+                    </view>
+                    <view class='view-list-item-desc'>
+                        <view class='view-list-item-desc-left'>
+                            <view>¥{{item.amount}}</view>
+                            <view>领薪金额</view>
+                            <view>{{item.applyTime}}</view>
+                        </view>
+                        <view class='view-list-item-desc-right'>
+                            <view class='img'>
+                                <image src="{{BASE_IMG_PATH}}right-icon-img.png"></image>
+                            </view>
+                            <view class='type'>
+                                <text wx:if="{{item.state === 0}}">审核中</text>
+                                <text wx:if="{{item.state === 1}}">待缴费({{dateTime}})</text>
+                                <text wx:if="{{item.state === 2}}">待放款</text>
+                                <text wx:if="{{item.state === 3}}">待退款</text>
+                                <!-- <text wx:if="{{item.state === 4}}">待还款</text> -->
+                                <text wx:if="{{item.state === 4}}">去打卡</text>
+                                <text wx:if="{{item.state === 5}}">已取消</text>
+                                <text wx:if="{{item.state === 6}}">已退款</text>
+                                <text wx:if="{{item.state === 7}}">已还款</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

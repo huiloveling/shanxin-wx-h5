@@ -1,0 +1,94 @@
+.nav {
+    position: relative;
+    height: 45px;
+    line-height: 45px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background: #fff;
+}
+
+.nav-title {
+    height: 45px;
+    line-height: 45px;
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 36rpx;
+    color: #000;
+}
+.nav .back {
+    position: absolute;
+    left: 20rpx;
+    top: 50%;
+    height: 48rpx;
+    bottom: 0;
+}
+
+.nav .back image {
+    display: block;
+    width: 38rpx;
+    height: 38rpx;
+}
+
+.overflow {
+    overflow: auto;
+    width: 100%;
+    box-sizing: border-box;
+    background: #f5f5f5;
+    padding: 0 30rpx;
+}
+
+.hidden {
+    overflow: hidden;
+}
+
+.title {
+    margin-top: 20rpx;
+    font-size: 28rpx;
+    color: #666;
+}
+
+.bill-desc {
+    height: 382rpx;
+    margin-top: 40rpx;
+    background-image: url('http://linghuijiyi.com/images/bill-big.png');
+    background-size: 100% 100%;
+    box-sizing: border-box;
+    padding: 73rpx 0 50rpx 0;
+    color: #fff;
+    text-align: center;
+}
+
+.bill-desc view:nth-child(1) {
+    font-size: 35rpx;
+    margin-bottom: 30rpx;
+}
+
+.bill-desc view:nth-child(2) {
+    font-size: 50rpx;
+}
+
+.bill-desc view:nth-child(3) {
+    font-size: 25rpx;
+    margin-bottom: 45rpx;
+    margin-top: 10rpx;
+}
+
+.bill-desc view:nth-child(4) {
+    font-size: 30rpx;
+}
+
+.btn {
+    margin-top: 180rpx;
+}
+
+.btn image {
+    display: block;
+    width: 502rpx;
+    height: 88rpx;
+    margin: 0 auto;
+}

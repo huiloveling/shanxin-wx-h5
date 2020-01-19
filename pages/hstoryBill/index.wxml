@@ -1,0 +1,36 @@
+<view>
+    <view class='nav bg-white' style='height:{{navH}}px'>
+        <view class='nav-title'>
+            历史周薪账单
+        </view>
+        <view class='back'>
+            <image bindtap="handleBackClick" src="{{BASE_IMG_PATH}}back.png"></image>
+        </view>
+    </view>
+    <scroll-view class='bg-gray overflow' style='height:calc(100vh - {{navH}}px)' scroll-y>
+        <view class='hidden'>
+            <view class='container'>
+                <view class='number'>最晚还款日：{{planDate}}</view>
+                <view class='salary item'>
+                    <view class='salary-item' wx:for="{{ repayList }}" wx:key="{{index}}" bindtap="handleSelectClick" data-index="{{index}}">
+                        <view class='item-n item-icon'>
+                            <van-icon size="22px" color="{{item.color ? '#FB4F2F' : '#ccc'}}" name="checked" />
+                        </view>
+                        <view class="item-n item-right">
+                            <view>第{{index + 1}}笔周薪：¥{{item.repayTotal}}</view>
+                            <view>{{item.applyTime}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class='defaultMoney item'>
+                    <view>违约金：¥{{totalFee}} </view>
+                    <view>逾期{{overdue}}天</view>
+                </view>
+                <view class='total-money item'>还款总额：¥{{totalAmount}}</view>
+            </view>
+            <view class='pay-btn'>
+                <image bindtap="handlePay" src="{{BASE_IMG_PATH}}whk-btn.png"></image>
+            </view>
+        </view>
+    </scroll-view>
+</view>

@@ -1,0 +1,20 @@
+<view>
+    <view class='nav bg-white' style='height:{{navH}}px'>
+        <view class='nav-title'>
+            {{title}}
+        </view>
+    </view>
+    <scroll-view class='bg-gray overflow' style='height:calc(100vh - {{navH}}px)' scroll-y>
+        <view class='hidden'>
+            <view class='big'>
+                <image src="{{BASE_IMG_PATH}}card-4.png"></image>
+            </view>
+            <view class='text' wx:if="{{state === '1'}}">非常感谢您访问“劳动钱包”，暂时查找不到您的工作信息，请联系公司人事增加工作信息后再来领周薪。</view>
+            <view class='text' wx:if="{{state === '2'}}">帐号异常，请联系客服</view>
+            <view class='text' wx:if="{{state === '3'}}">身份认证失败</view>
+            <view class='btn'>
+                <image bindtap="handleNavigateTo" src="{{BASE_IMG_PATH}}ok.png"></image>
+            </view>
+        </view>
+    </scroll-view>
+</view>

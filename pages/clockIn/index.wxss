@@ -1,0 +1,552 @@
+.nav {
+    position: relative;
+    height: 45px;
+    line-height: 45px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background: #fff;
+}
+
+.nav-title {
+    height: 45px;
+    line-height: 45px;
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 36rpx;
+    color: #000;
+}
+
+.overflow {
+    overflow: auto;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20rpx 20rpx 50rpx 20rpx;
+    background: #F6F6F6;
+}
+
+.hidden {
+    overflow: hidden;
+    
+}
+
+/* 新闻板块 */
+.news {
+    width: 100%;
+    height: 80rpx;
+    background: #fff;
+    border-radius: 50rpx;
+    margin-bottom: 30rpx;
+    box-sizing: border-box;
+    padding-left: 40rpx;
+    display: flex;
+}
+
+.news .news-icon {
+    display: flex;
+    align-items: center;
+}
+
+.news .news-desc {
+    font-size: 28rpx;
+    font-family: 'PingFang-SC-Regular';
+    color: #333333;
+    line-height: 80rpx;
+    margin-left: 30rpx;
+    flex: 1;
+}
+
+.news .news-icon image {
+    display: block;
+    width: 40rpx;
+    height: 40rpx;
+}
+
+/* 薪资模块 */
+.salary {
+    width: 100%;
+    height: 324rpx;
+    background: #fff;
+    margin-bottom: 30rpx;
+    padding: 30rpx 30rpx 45rpx 30rpx;
+    box-sizing: border-box;
+    border-radius: 15rpx;
+}
+
+.salary .salary-week {
+    display: flex;
+}
+
+.salary .salary-week .item {
+    flex: 1;
+    height: 193rpx;
+    position: relative;
+}
+
+.salary .salary-week view.item image {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.salary .salary-week .item:nth-child(1) {
+    margin-right: 15rpx;
+}
+
+.salary .salary-week .item:nth-child(2) {
+    margin-left: 15rpx;
+}
+
+
+.salary .salary-week .item .desc {
+    position: absolute;
+    width: 100%;
+    color: #fff;
+    left: 0;
+    top: 0;
+    text-align: center;
+    font-family: 'PingFang-SC-Medium';
+    padding: 40rpx 0;
+}
+
+.salary .salary-week .item .desc .title {
+    font-size: 28rpx;
+    margin-bottom: 10rpx;
+}
+
+.salary .salary-week .item .desc .number {
+    font-size: 40rpx;
+
+}
+
+.salary .salary-week .item .desc .number text {
+    font-size: 26rpx;
+    font-family: 'PingFang-SC-Medium';
+}
+
+.salary .salary-tips {
+    color: #9E9E9E;
+    font-size: 26rpx;
+}
+
+.salary .salary-tips text {
+    color: #353535;
+}
+
+/* 日期模块 */
+.calendar {
+    background-color: #fff;
+    border-radius: 15rpx;
+}
+
+.calendar-title {
+    height: 100rpx;
+    line-height: 100rpx;
+    font-size: 36rpx;
+    display: flex;
+}
+
+.calendar-title view {
+    flex: 1;
+    text-align: center;
+}
+.calendar-title .arrow-prev,
+.calendar-title .arrow-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.calendar-title .arrow-prev image,
+.calendar-title .arrow-next image {
+    display: block;
+    width: 19rpx;
+    height: 29rpx;
+}
+
+.calendar-week {
+    font-weight: bold;
+    font-size: 28rpx;
+    display: flex;
+    color: #111111;
+}
+
+.calendar-week .item {
+    flex: 1;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.calendar-date {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.calendar-date .item {
+    width: 14.28%;
+    box-sizing: border-box;
+    position: relative;
+    height: 80rpx;
+    text-align: center;
+    font-size: 26rpx;
+    color: #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendar-date .item .day {
+    width: 52rpx;
+    height: 52rpx;
+    border-radius: 50%;
+    line-height: 52rpx;
+    text-align: center;
+    position: relative;
+}
+
+.calendar-date .item .day image {
+    position: absolute;
+    bottom: -5rpx;
+    display: block;
+    width: 10rpx;
+    height: 10rpx;
+    left: 50%;
+    margin-left: -5rpx;
+}
+
+.calendar-date .item-curDay {
+    color: #fff;
+    background-color: #FA542F;
+}
+
+.dk-btn {
+    display: flex;
+    margin-top: 80rpx;
+    padding-bottom: 60rpx;
+    background: #fff;
+}
+
+.dk-btn view {
+    height: 70rpx;
+}
+.dk-btn view button {
+    padding: 0;
+    font-size: 30rpx;
+}
+
+.dk-btn view text {
+    font-size: 30rpx;
+    color: #FB4F2F;
+}
+
+.dk-btn view:nth-child(1) {
+    margin-right: 15rpx;
+    margin-left: 45rpx;
+}
+
+.dk-btn view:nth-child(2) {
+    margin-left: 15rpx;
+    margin-right: 45rpx;
+}
+
+.dk-btn view  button {
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 70rpx;
+    color: #fff;
+    font-size: 28rpx;
+}
+.button-hover {
+    background: #ccc;
+}
+
+.dk-btn view button::after {
+    border: none;
+}
+
+/* 服务模块 */
+.service {
+    background: #fff;
+    display: flex;
+    margin-top: 40rpx;
+    padding: 30rpx 0;
+}
+
+.service .paySlip button {
+    font-size: 24rpx;
+    display: block;
+    height: 30rpx;
+    line-height: 30rpx;
+}
+
+.service view {
+    flex: 1;
+    text-align: center;
+    color: #333333;
+    font-size: 28rpx;
+    font-family: 'PingFang-SC-Medium';
+}
+.service view button {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.service view image {
+    display: block;
+    width: 69.5rpx;
+    height: 69.5rpx;
+    margin: 0 auto;
+    margin-bottom: 10rpx;
+}
+.service view button {
+    background: #fff;
+}
+.service view button::after {
+    border: none;
+}
+.service view .text {
+    font-size: 24rpx;
+    display: block;
+    height: 30rpx;
+    line-height: 30rpx;
+}
+
+
+.van-popup {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.van-popup .main {
+    width: 535rpx;
+    height: 421rpx;
+    background: #fff;
+    border-radius: 10rpx;
+    position: relative;
+}
+
+.van-popup .main .close {
+    position: absolute;
+    right: 15rpx;
+    top: 15rpx;
+}
+
+.van-popup .main .close image {
+    display: block;
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.van-popup .main .header {
+    position: relative;
+    height: 90rpx;
+}
+
+.van-popup .main .header image {
+    display: block;
+    width: 90rpx;
+    height: 90rpx;
+    position: absolute;
+    top: -45rpx;
+    left: 50%;
+    margin-left: -45rpx;
+}
+
+.van-popup .main .title {
+    text-align: center;
+    font-family: 'PingFang-SC-Medium';
+    color: #000;
+    font-size: 35rpx;
+}
+
+.van-popup .main .treaty {
+    text-align: center;
+    margin-top: 40rpx;
+}
+.van-popup .main .treaty view:nth-child(1) {
+    font-size: 28rpx;
+    color: #ccc;
+    font-family: 'PingFang-SC-Medium';
+}
+.van-popup .main .treaty view:nth-child(2) {
+    margin-top: 10rpx;
+    color: red;
+    font-size: 28rpx;
+    font-family: 'PingFang-SC-Medium';
+}
+
+.van-popup .main button {
+    display: block;
+    width: 70%;
+    height: 66rpx;
+    line-height: 66rpx;
+    font-size: 28rpx;
+    margin: 0 auto;
+    margin-top: 45rpx;
+    border-radius: 50rpx;
+}
+
+/* 身份没有认证状态 */
+.popupCard {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+.container-s {
+    width: 548rpx;
+    height: 671rpx;
+    background: #fff;
+}
+
+.container-s image {
+    display: block;
+    width: 100%;
+    height: 340rpx;
+}
+
+.container-s .title {
+    text-align: center;
+    padding: 0 60rpx;
+    margin-top: 40rpx;
+    margin-bottom: 30rpx;
+    font-size: 40rpx;
+    color: #000;
+    font-family: 'PingFang-SC-Medium';
+}
+
+.container-s .size {
+    font-size: 30rpx;
+    margin-bottom: 60rpx;
+}
+
+.container-s .btn image {
+    display: block;
+    width: 308rpx;
+    height: 65rpx;
+    margin: 0 auto;
+}
+
+/* 打卡记录模块 */
+.container-s .clockRecord {
+    padding: 50rpx;
+}
+.container-s .clockRecord .up,
+.container-s .clockRecord .down {
+    text-align: center;
+    margin-bottom: 20rpx;
+}
+.container-s .clockRecord .up view:nth-child(1) {
+    font-size: 40rpx;
+    color: #000;
+    margin-bottom: 10rpx;
+}
+.container-s .clockRecord .up view:nth-child(2) {
+    color: red;
+    font-size: 30rpx;
+}
+.container-s .clockRecord .down view:nth-child(1) {
+    font-size: 40rpx;
+    color: #000;
+    margin-bottom: 10rpx;
+}
+.container-s .clockRecord .down view:nth-child(2) {
+    color: red;
+    font-size: 30rpx;
+}
+.container-s .clockRecord .reminder {
+    padding-left: 35rpx;
+    margin-top: 40rpx;
+}
+.container-s .clockRecord .reminder view:nth-child(1) {
+    color: red;
+    font-size: 30rpx;
+}
+.container-s .clockRecord .reminder view:nth-child(2) {
+    color: #ccc;
+    font-size: 25rpx;
+    margin-top: 15rpx;
+}
+.container-s .clockRecord .btn {
+    margin-top: 50rpx;
+}
+
+/* 打卡成功提示模块 */
+.container-s .tilte-icon {
+    height: 32rpx;
+    line-height: 32rpx;
+    display: flex;
+}
+
+.container-s .clockTips {
+    padding: 48rpx;
+}
+.container-s .tilte-icon {
+    margin-bottom: 80rpx;
+}
+.container-s .tilte-icon image {
+    display: block;
+    width: 33rpx;
+    height: 48rpx;
+}
+.container-s .tilte-icon view {
+    color: #000;
+    font-size: 26rpx;
+    line-height: 48rpx;
+    margin-left: 15rpx;
+}
+/* 打卡异常列表 */
+.abnormal-view {
+    height: 500rpx;
+    padding: 20rpx 30rpx;
+}
+
+.abnormal-view .title {
+    font-size: 36rpx;
+    color: #000;
+    margin-bottom: 50rpx;
+}
+.abnormal-view button {
+    display: block;
+    width: 50%;
+    margin: 150rpx auto 0 auto;
+
+}
+
+.abnormal-view .close {
+    height: 50rpx;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.abnormal-view .close image {
+    width: 24rpx;
+    height: 24rpx;
+    display: block;
+}
+.abnormal-view image.btn {
+    display: block;
+    width: 330rpx;
+    height: 70rpx;
+    margin: 150rpx auto 0 auto;
+}

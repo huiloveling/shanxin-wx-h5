@@ -1,0 +1,47 @@
+<view>
+    <view class='nav bg-white' style='height:{{navH}}px'>
+        <view class='nav-title'>
+            工资条
+        </view>
+        <view class='back'>
+            <image bindtap="handleBackClick" src="{{BASE_IMG_PATH}}back.png"></image>
+        </view>
+    </view>
+    <view class='van-loading' wx:if="{{vanLoading}}">
+        <van-loading type="spinner" color="#07c160" />
+    </view>
+    <scroll-view class='bg-gray overflow' style='height:calc(100vh - {{navH}}px)' scroll-y>
+        <view class='hidden'>
+            <!-- <view class='view-stepper'>
+                <view class='view-stepper-item' bindtap="handleCmpanyNameClick">
+                    <view>薪动（青岛）网络科技有限...</view>
+                    <image src="https://line.mimidai.com/static/img/shanxin/images/icon-big.png"></image>
+                </view>
+                <view class='view-stepper-item'>
+                    <view>排序</view>
+                    <image src="https://line.mimidai.com/static/img/shanxin/images/icon-big.png"></image>
+                </view>
+                <view class='view-stepper-item'>
+                    <view>月份</view>
+                    <image src="https://line.mimidai.com/static/img/shanxin/images/icon-big.png"></image>
+                </view>
+            </view> -->
+            <view class='view-list'>
+                <view class='view-list-item' wx:if="{{list.length}}">
+                    <view>工资月份</view>
+                    <view>工资金额</view>
+                </view>
+                <view class='view-list-item' wx:for="{{list}}" wx:key="{{index}}" bindtap="handleDel" data-month="{{item.month}}">
+                    <view>{{item.month}}</view>
+                    <view>{{item.monthMoney}}</view>
+                </view>
+            </view>
+            <view style="text-align: center;" wx:if="{{state}}">工资条查询失败</view>
+        </view>
+    </scroll-view>
+    <van-popup class='custom-class' custom-class="custom-class" show="{{ showCmpanyName }}" position="bottom" bind:click-overlay="onClose">
+        <view>
+            <van-picker class='custom-class' show-toolbar columns="{{ columns }}" bind:cancel="onCancel" bind:confirm="onConfirm" />
+        </view>
+    </van-popup>
+</view>

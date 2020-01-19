@@ -1,0 +1,193 @@
+<view>
+    <view class="drawer_screen" style="z-index: 999;" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
+    <!-- modal -->
+    <modalView show="{{showModal}}" modal_width="{{548}}">
+        <view class='modal-content'>
+            <scroll-view scroll-y class='main-content'>
+                <view class='big'>
+                    <image src="{{BASE_IMG_PATH}}big-2.png"></image>
+                </view>
+                <view class='desc'>
+                    恭喜您，信息提交成功，审核中，审核通过后您将获得参与打卡及领周薪的权益
+                </view>
+                <view class='btn'>
+                    <image bindtap="modalConfirm" src="{{BASE_IMG_PATH}}btn-9.png"></image>
+                </view>
+            </scroll-view>
+        </view>
+    </modalView>
+    <!--mask-->
+    <!--content-->
+    <!--使用animation属性指定需要执行的动画-->
+    <view animation="{{animationData}}" class="drawer_attr_box" wx:if="{{showModalStatus}}">
+        <view class="drawer_content">
+            <view wx:if="{{workmate}}">
+                <view class='drawer_title'>添加工友信息</view>
+                <view class='drawer_desc'>为了您能够顺利领周薪请填写真实信息</view>
+                <view class='drawer_from'>
+                    <view class='item'>
+                        <text class='name'>工友姓名：</text>
+                        <view class='input'>
+                            <view>
+                                <input value="{{friendInputName}}" adjust-position='{{true}}' placeholder="工友姓名" bindfocus="foucus" bindblur="blur" bindinput="handleInpueChange" data-contacts='friendInputName'></input>
+                            </view>
+                            <view>
+                                <text>注:</text>必须汉字格式
+                                <text>例如:</text>张三
+                            </view>
+                        </view>
+                    </view>
+                    <view class='item'>
+                        <text class='name'>工友手机号：</text>
+                        <view class='input'>
+                            <view>
+                                <input value="{{friendInputPhone}}" adjust-position='{{true}}' bindfocus="foucus" bindblur="blur" placeholder="工友手机号" bindinput="handleInpueChange" data-contacts='friendInputPhone'></input>
+                            </view>
+                            <view>
+                                <text>注:</text>必须11位手机号
+                                <text>例如:</text>13131311544
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class='drawer_save'>
+                    <image src="{{BASE_IMG_PATH}}save-btn.png" bindtap="drawer_save_friend" data-statu="close"></image>
+                </view>
+            </view>
+            <view wx:else>
+                <view class='drawer_title'>添加亲友信息</view>
+                <view class='drawer_desc'>为了您能够顺利领周薪请填写真实信息</view>
+                <view class='drawer_from'>
+                    <view class='item'>
+                        <text class='name'>亲友关系：</text>
+                        <view class='input'>
+                            <view>
+                                <Select class='select' defaultText="{{defaultText}}" prop-array='{{selectArray}}' bind:myget='selectChange'></Select>
+                            </view>
+                        </view>
+                    </view>
+                    <view class='item'>
+                        <text class='name'>亲友姓名：</text>
+                        <view class='input'>
+                            <view>
+                                <input value="{{relativeInputName}}" adjust-position='{{true}}' placeholder="亲友姓名" bindfocus="foucus" bindblur="blur" bindinput="handleInpueChange" data-contacts='relativeInputName'></input>
+                            </view>
+                            <view>
+                                <text>注:</text>必须汉字格式
+                                <text>例如:</text>张三
+                            </view>
+                        </view>
+                    </view>
+                    <view class='item'>
+                        <text class='name'>亲友手机号：</text>
+                        <view class='input'>
+                            <view>
+                                <input value="{{relativeInputPhone}}" adjust-position='{{true}}' placeholder="亲友手机号" bindfocus="foucus" bindblur="blur" bindinput="handleInpueChange" data-contacts='relativeInputPhone'></input>
+                            </view>
+                            <view>
+                                <text>注:</text>必须11位手机号
+                                <text>例如:</text>13131311544
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class='drawer_save'>
+                    <image bindtap="drawer_save_relative" data-statu="close" src="./../../static/images/save-btn-icon.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class='nav bg-white' style='height:{{navH}}px'>
+        <view class='nav-title'>
+            信息确认
+        </view>
+        <view class='back'>
+            <image bindtap="handleBackClick" src="{{BASE_IMG_PATH}}back.png"></image>
+        </view>
+    </view>
+    <scroll-view class='bg-gray overflow' style='height:calc(100vh - {{navH}}px)' scroll-y>
+        <view class='hidden'>
+
+            <view class='work-mess'>
+                <view class='work-mess-title'>
+                    工作信息确认
+                </view>
+                <view class='work-mess-name item'>
+                    <view>工作单位：</view>
+                    <view>{{companyName}}</view>
+                </view>
+                <view class='work-mess-place item'>
+                    <view>工作地点：</view>
+                    <view>{{address}}</view>
+                </view>
+                <view class='work-mess-post item'>
+                    <view>岗位：</view>
+                    <view>{{workJobs}}</view>
+                </view>
+                <view class='work-mess-pay item'>
+                    <view>发薪日：</view>
+                    <view>{{paySalaryDate}}</view>
+                </view>
+                <view class='work-mess-salary item'>
+                    <view>薪资：</view>
+                    <view>{{jobSalary}}</view>
+                </view>
+            </view>
+            <view class='pressing'>
+                <view class='pressing-title'>添加工友信息</view>
+                <view class='friendInfo' wx:if="{{friendState}}">
+                    <view class='friendInfo-item bor-solid'>
+                        <view class='title'>工友姓名：</view>
+                        <view class='desc'>{{friendName}}</view>
+                    </view>
+                    <view class='friendInfo-item bor-solid'>
+                        <view class='title'>工友手机号：</view>
+                        <view class='desc'>{{friendPhone}}</view>
+                    </view>
+                    <view class='friendInfo-update'>
+                        <image bindtap="powerDrawer" data-statu="open" data-friend="friend" src="{{BASE_IMG_PATH}}btn-5.png"></image>
+                    </view>
+                </view>
+                <view class='pressing-btn' wx:else>
+                    <view bindtap="powerDrawer" data-statu="open" data-friend="friend">
+                        <image src="{{BASE_IMG_PATH}}tjgy-btn.png"></image>
+                    </view>
+                </view>
+            </view>
+            <view class='pressing'>
+                <view class='pressing-title'>添加亲友信息</view>
+                <view class='friendInfo' wx:if="{{relativeState}}">
+                    <view class='friendInfo-item bor-solid'>
+                        <view class='title'>亲友关系：</view>
+                        <view class='desc'>{{relativeRelation}}</view>
+                    </view>
+                    <view class='friendInfo-item bor-solid'>
+                        <view class='title'>亲友姓名：</view>
+                        <view class='desc'>{{relativeName}}</view>
+                    </view>
+                    <view class='friendInfo-item bor-solid'>
+                        <view class='title'>亲友手机号：</view>
+                        <view class='desc'>{{relativePhone}}</view>
+                    </view>
+                    <view class='friendInfo-update'>
+                        <image bindtap="powerDrawer" data-statu="open" data-friend="relative" src="{{BASE_IMG_PATH}}btn-6.png"></image>
+                    </view>
+                </view>
+                <view class='pressing-btn' wx:else>
+                    <view bindtap="powerDrawer" data-statu="open" data-friend="relative">
+                        <image src="{{BASE_IMG_PATH}}tjqy-btn.png"></image>
+                    </view>
+                </view>
+            </view>
+            <!-- 保存信息 -->
+            <view class='save-mess'>
+                <form wx:if="{{friendState && relativeState}}" bindsubmit="formSubmit" bindreset="formReset" report-submit="{{true}}">
+                    <button class="btn" bindtap="handleSaveUserContacts" size='mini' form-type="submit">
+                        <image src="{{BASE_IMG_PATH}}btn-8.png"></image>
+                    </button>
+                </form>
+                <image wx:else src="{{BASE_IMG_PATH}}btn-7.png"></image>
+            </view>
+        </view>
+    </scroll-view>
+</view>

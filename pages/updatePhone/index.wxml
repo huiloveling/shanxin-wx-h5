@@ -1,0 +1,33 @@
+<view>
+    <view class='nav bg-white' style='height:{{navH}}px'>
+        <view class='nav-title'>
+            紧急联系人
+        </view>
+        <view class='back'>
+            <image bindtap="handleBackClick" src="{{BASE_IMG_PATH}}back.png"></image>
+        </view>
+    </view>
+    <scroll-view class='bg-gray overflow' style='height:calc(100vh - {{navH}}px)' scroll-y>
+        <view class='hidden'>
+            <view class='view-container'>
+                <view class='original-phone'>
+                    <text>关系:</text>
+                    <view class='sel'>
+                        <Select class='select' defaultText="{{defaultText}}" prop-array='{{selectArray}}' bind:myget='selectChange'></Select>
+                    </view>
+                </view>
+                <view class='new-phone'>
+                    <text>姓名:</text>
+                    <input value="{{name}}" bindinput="handleInputChange" data-value="name" placeholder="请输入姓名" />
+                </view>
+                <view class='msg-code'>
+                    <text>手机号:</text>
+                    <input value="{{phone}}" bindinput="handleInputChange" data-value="phone" placeholder="请输入手机号" />
+                </view>
+            </view>
+            <view class='btn' bindtap="saveUserContacts" style="background: #F67B33;">
+                提交
+            </view>
+        </view>
+    </scroll-view>
+</view>

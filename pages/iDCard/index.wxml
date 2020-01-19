@@ -1,0 +1,115 @@
+<view>
+    <!--mask-->
+    <view class="drawer_screen" data-statu="close" wx:if="{{showModalStatus}}"></view>
+    <!--content-->
+    <!--使用animation属性指定需要执行的动画-->
+    <view animation="{{animationData}}" class="drawer_attr_box" wx:if="{{showModalStatus}}">
+        <!--drawer content-->
+        <view class="drawer_content">
+            <view class='drawer_title'>身份证有误将影响授信结果，请再次确认身份信息</view>
+            <view class='drawer_info'>
+                <view class='drawer_info_name'>
+                    <view class='l'>姓名：</view>
+                    <view class='r'>{{dpositiveCardata.name}}</view>
+                </view>
+                <view class='drawer_info_card'>
+                    <view class='l'>身份证号码：</view>
+                    <view class='r'>{{dpositiveCardata.idcard}}</view>
+                </view>
+            </view>
+            <view class='drawer_btn'>
+                <view>
+                    <text bindtap="powerDrawer" data-statu="close">返回修改</text>
+                </view>
+                <view data-statu="close">
+                    <text wx:if="{{timer > 0}}">确认无误({{timer}}s)</text>
+                    <text class='btn-ok' bindtap="handleSalarySystemUser" wx:else>确认无误</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class='nav bg-white' style='height:{{navH}}px'>
+        <view class='nav-title'>
+            身份证认证
+        </view>
+    </view>
+    <scroll-view class='bg-gray overflow' style='height:calc(100vh - {{navH}}px)' scroll-y>
+        <view class='hidden'>
+            <view class='view'>
+                <view class='text'>
+                    <view>1、为了确保证能够及时的查看工资条及领周薪，请绑定本人身份证，已经绑定无法修改。</view>
+                    <view>2、拍摄时请在
+                        <text>深色背景</text>下并且确保身份证
+                        <text>边框完整、字迹清晰、亮度均衡。</text>
+                    </view>
+                </view>
+                <view class='card-area'>
+                    <view class='portrait area'>
+                        <form wx:if="{{positiveCard}}" bindsubmit="formSubmit" bindreset="formReset" report-submit="{{true}}">
+                            <button bindtap="uploadPositiveCardImg" class='positiveCard-btn' size='mini' form-type="submit">
+                                <image src="{{BASE_IMG_PATH}}positive.png"></image>
+                            </button>
+                        </form>
+                        <view wx:else class='info'>
+                            <view class='warp'>
+                                <image src="{{idcardFrontImg}}"></image>
+                                <form bindsubmit="formSubmit" bindreset="formReset" report-submit="{{true}}">
+                                    <button bindtap="uploadPositiveCardImg" class='positiveCard-btn' size='mini' form-type="submit">
+                                        <image class='chongpai-img' src="./../../static/images/chongpai-icon.png"></image>
+                                    </button>
+                                </form>
+                            </view>
+                            <view class='item'>
+                                <view class='row'>
+                                    <text class='title'>姓名：{{dpositiveCardata.name}}</text>
+                                </view>
+                                <view w class='row'>
+                                    <view>
+                                        <text>身份证号码：</text>
+                                    </view>
+                                    <view class='card-num'>
+                                        <text>{{dpositiveCardata.idcard}}</text>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class='national area'>
+                        <form wx:if="{{reverseCard}}" bindsubmit="formSubmit" bindreset="formReset" report-submit="{{true}}">
+                            <button bindtap="uploadReverseCardImg" class='positiveCard-btn' size='mini' form-type="submit">
+                                <image src="{{BASE_IMG_PATH}}national.png"></image>
+                            </button>
+                        </form>
+                        <view wx:else class='info'>
+                            <view class='warp'>
+                                <image src="{{idcardBackImg}}"></image>
+                                <form bindsubmit="formSubmit" bindreset="formReset" report-submit="{{true}}">
+                                    <button bindtap="uploadReverseCardImg" class='positiveCard-btn' size='mini' form-type="submit">
+                                        <image class='chongpai-img' src="./../../static/images/chongpai-icon.png"></image>
+                                    </button>
+                                </form>
+                            </view>
+                            <view class='item'>
+                                <view class='row'>
+                                    <text class='title'>签发机关：{{dpositiveCardata.isUsedBy}}</text>
+                                </view>
+                                <view w class='row'>
+                                    <view>
+                                        <text>有效期：</text>
+                                    </view>
+                                    <view class='card-num'>
+                                        <text>{{dpositiveCardata.validDate}}</text>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <button class='update-btn' wx:if="{{positiveCard || reverseCard}}">上传完成</button>
+            <view wx:else class='uploadFile' bindtap="powerDrawer" data-statu="open">
+                <image src="{{BASE_IMG_PATH}}file-btn.png"></image>
+            </view>
+        </view>
+    </scroll-view>
+</view>

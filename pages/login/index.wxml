@@ -1,0 +1,29 @@
+<view>
+    <scroll-view class='bg-gray overflow' scroll-y>
+        <view class='hidden'>
+            <view class='login-view'>
+                <view class='login-icon'>
+                    <image src="./../../static/images/login-web.png"></image>
+                </view>
+                <view style="color: #8F8FFD; font-size: 46rpx; text-align: center; margin-top: 30rpx;">
+                    劳动钱包
+                </view>
+                <view class='login-btn'>
+                    <form bindsubmit="formSubmit" bindreset="formReset" report-submit="{{true}}">
+                        <button form-type="submit" open-type='getUserInfo' bindgetuserinfo='bindGetUserInfo'>微信快捷登录</button>
+                    </form>
+                    <!-- <image src="./../../static/images/login-btn-img.png"></image> -->
+                </view>
+                <view class='login-xieyi' style="color: #666;">
+                    <van-checkbox checked-color="#07c160" value="{{ checked }}" bind:change="onChange"></van-checkbox>
+                    <view style="margin-left: 10rpx;">点击微信登录即同意
+                        <text bindtap="handleRegeistAgreement">《用户协议及隐私》</text>
+                    </view>
+                </view>
+                <view class='noLogin'>
+                    <text bindtap="handleToNavClick" style="color: #666;">暂不登录，去看看</text>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

@@ -1,0 +1,63 @@
+.nav {
+    position: relative;
+    height: 45px;
+    line-height: 45px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background: #fff;
+}
+
+.nav-title {
+    height: 45px;
+    line-height: 45px;
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 36rpx;
+    color: #000;
+}
+
+.overflow {
+    overflow: auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.hidden {
+    overflow: hidden;
+}
+
+.view-img {
+    margin-top: 150rpx;
+}
+
+.view-img image {
+    display: block;
+    width: 543rpx;
+    height: 401rpx;
+    margin: 0 auto;
+}
+
+.view-desc {
+    font-family: 'PingFang-SC-Medium';
+    font-size: 28rpx;
+    text-align: center;
+    color: #666;
+    margin-top: 80rpx;
+    padding: 0 100rpx;
+}
+
+.view-btn {
+    margin-top: 80rpx;
+}
+
+.view-btn image {
+    display: block;
+    width: 502rpx;
+    height: 88rpx;
+    margin: 0 auto;
+}

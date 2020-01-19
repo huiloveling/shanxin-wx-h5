@@ -1,0 +1,45 @@
+<view>
+    <view class='nav bg-white' style='height:{{navH}}px'>
+        <view class='nav-title'>
+            打卡说明
+        </view>
+        <view class='back'>
+            <image bindtap="handleBackClick" src="{{BASE_IMG_PATH}}back.png"></image>
+        </view>
+    </view>
+    <scroll-view class='bg-gray overflow' style='height:calc(100vh - {{navH}}px)' scroll-y>
+        <view class='hidden'>
+            <!-- <view class='title'>打卡说明</view> -->
+            <view style="text-indent: 20px;">
+                为了方便大家预支薪资，请按照以下打卡方式打卡，提高薪资预支额度：
+            </view>
+            <view>
+                1.每天最多两次打卡，分别为：上班打卡、下班打卡。
+            </view>
+            <view>
+                2.一天之内上班打卡、下班打卡次数分别为1。
+            </view>
+            <view>
+                3.每天23:59:59结算当日打卡信息。
+            </view>
+            <view>
+                4.当日打卡状态只限当日有效，与相邻日打卡状态无关联。
+            </view>
+            <view>
+                5.当日内完成上班打卡+下班打卡，则打卡天数+1。
+            </view>
+            <view>
+                6.不支持补卡操作。
+            </view>
+            <view>
+                7.打卡≥4天，才可预支上一周工资
+            </view>
+            <view>
+                8.打卡天数越多，预支周薪额度越高。
+            </view>
+            <view>
+                9.如遇到打卡问题，请咨询客服。
+            </view>
+        </view>
+    </scroll-view>
+</view>

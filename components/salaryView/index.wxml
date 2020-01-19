@@ -1,0 +1,40 @@
+<view>
+    <view class='notice'>
+        <view class='laba'>
+            <image src="https://sxapi.wanjingyou.com.cn/static/images/laba.png"></image>
+        </view>
+        <view class='info'>打卡天数越多领取的金额越多，快去哦！</view>
+    </view>
+    <view class='big'>
+        <image src="https://sxapi.wanjingyou.com.cn/static/images/zx-big.png"></image>
+    </view>
+    <view class='desc'>
+        <view wx:if="{{state === 1 || state === 2 || state === 4 || state === 6 || state === 7 || state === 10 || state === 8}}">{{msg}}</view>
+        <view wx:if="{{state === 5}}">
+            您好，很抱歉，今天不支持领取周薪，不能申请领周薪，领取规则可查看
+            <navigator bindtap="handleToClockin" style="display: inline-block; color: #FA6246;" url="/pages/clockIn/index" open-type="navigate" hover-class="navigator-hover">打卡说明</navigator>
+        </view>
+    </view>
+    <view class='btn'>
+        <image bindtap="handleChangeClick" wx:if="{{state === 1}}" src="https://sxapi.wanjingyou.com.cn/static/images/salary2-btn.png"></image>
+        <view wx:if="{{state === 6}}">
+            <image wx:if="{{feeState == 1 || feeState === '1'}}" bindtap="handleNavigateTo" src="https://sxapi.wanjingyou.com.cn/static/images/salary3-btn.png"></image>
+            <!-- <image wx:if="{{feeState === 0}}" bindtap="handlePayFee" src="https://line.mimidai.com/static/img/shanxin/images/qujf.png"></image> -->
+            <image wx:if="{{feeState === 0}}" bindtap="handlePayFee" src="https://sxapi.wanjingyou.com.cn/static/images/salary4-btn.png"></image>
+
+
+            
+        </view>
+        <image bindtap="handleChangeClick" wx:if="{{state === 4 || state === 5 || state === 7 || feeState === 2 }}" src="https://sxapi.wanjingyou.com.cn/static/images/salary4-btn.png"></image>
+        <view wx:if="{{state === 10}}">
+            <button bindtap="handleToBank" style="width: 60%; display: block; margin: 0 auto;" type="primary">绑定银行卡</button>
+        </view>
+        <view wx:if="{{state === 8}}">
+            <button bindtap="handleToBank" style="width: 60%; display: block; margin: 0 auto;" type="primary">绑定银行卡</button>
+        </view>
+        <view wx:if="{{state === 2}}">
+            <image wx:if="{{feeState == 1 || feeState === '1'}}" bindtap="handleNavigateTo" src="https://sxapi.wanjingyou.com.cn/static/images/salary3-btn.png"></image>
+            <image wx:if="{{feeState === 0}}" bindtap="handleChangeClick" src="https://sxapi.wanjingyou.com.cn/static/images/salary4-btn.png"></image>
+        </view>
+    </view>
+</view>

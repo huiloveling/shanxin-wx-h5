@@ -1,0 +1,29 @@
+<view>
+    <view class='nav bg-white' style='height:{{navH}}px'>
+        <view class='nav-title'>
+            银行卡信息
+        </view>
+        <view class='back'>
+            <image bindtap="handleBackClick" src="{{BASE_IMG_PATH}}back.png"></image>
+        </view>
+    </view>
+    <scroll-view class='bg-gray overflow' style='height:calc(100vh - {{navH}}px)' scroll-y>
+        <view class='hidden'>
+            <view class='view-list'>
+                <view class='view-list-item'>
+                    <view>银行卡号:</view>
+                    <view>{{bankData.bankCard}}</view>
+                </view>
+                <view class='view-list-item'>
+                    <view>所属银行:</view>
+                    <view>{{bankData.name}}</view>
+                </view>
+                <view class='view-list-item'>
+                    <view>预留手机号:</view>
+                    <view>{{bankData.phoneNo}}</view>
+                </view>
+            </view>
+            <view class='desc'>*预支周薪必须使用您的工资卡，如需变更请与您公司人事部沟通。</view>
+        </view>
+    </scroll-view>
+</view>

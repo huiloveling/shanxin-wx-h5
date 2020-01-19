@@ -1,0 +1,388 @@
+.nav {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.nav-title {
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    font-family: PingFang-SC-Medium;
+    font-size: 36rpx;
+    letter-spacing: 2px;
+}
+
+.nav .back {
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px 15px;
+}
+
+.bg-white {
+    background-color: #fff;
+}
+
+.bg-gray {
+    width: 100%;
+    box-sizing: border-box;
+    background: #f6f6f6;
+    padding: 0 30rpx;
+}
+
+.overflow {
+    overflow: auto;
+}
+
+.hidden {
+    overflow: hidden;
+    position: relative;
+}
+
+.view {
+    height: 100%;
+    overflow: auto;
+    padding-bottom: 46px;
+}
+
+.bg-gray .text {
+    font-size: 30rpx;
+    color: #353535;
+    font-family: PingFang-SC-Medium;
+}
+
+.bg-gray .text view {
+    margin-top: 25rpx;
+}
+
+.bg-gray .text view text {
+    color: #fb4f2f;
+}
+
+.card-area {
+    margin-top: 40rpx;
+}
+
+.card-area .portrait form {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.card-area .portrait form .positiveCard-btn {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+.portrait .warp {
+    position: relative;
+}
+
+.icon {
+    position: absolute;
+    display: block;
+    width: 93rpx;
+    height: 93rpx;
+}
+
+.card-area .portrait form button {
+    background: none;
+}
+
+.card-area .portrait form button image {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.card-area .portrait, .card-area .national {
+    width: 690rpx;
+    height: 380rpx;
+    background: #fff;
+    margin-bottom: 30rpx;
+}
+
+.card-area .national form {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.card-area .national form button {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    background: none;
+}
+
+.card-area .national form button image {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.card-area .portrait image, .card-area .national image {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.card-area .area .info {
+    width: 100%;
+    height: 100%;
+    padding: 105rpx 51rpx;
+    box-sizing: border-box;
+}
+
+.card-area .area .info form {
+    display: block;
+    width: 93rpx;
+    height: 93rpx;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.warp {
+    display: block;
+    width: 229rpx;
+    height: 170rpx;
+    float: left;
+    position: relative;
+}
+
+.card-area .area .info form button {
+    display: block;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.card-area .area .info form button image {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.card-area .area .info image {
+    display: block;
+    width: 229rpx;
+    height: 170rpx;
+    float: left;
+}
+
+.card-area .area .info view.item {
+    height: 170rpx;
+    font-size: 28rpx;
+    color: #333;
+    position: relative;
+    padding: 10rpx 0;
+    box-sizing: border-box;
+    margin-left: 270rpx;
+}
+
+.card-area .area .info view.item .row {
+    width: 100%;
+}
+
+.card-area .area .info view.item .row:nth-child(2) view {
+    line-height: 50rpx;
+}
+
+.card-area .area .info view.item .row:nth-child(1) {
+    height: 70rpx;
+}
+
+.card-area .area .info view.item .row:nth-child(2) {
+    height: 100rpx;
+}
+
+.card-area .area .info view.item .row .card-num {
+    width: 100%;
+}
+
+.card-area .area .info view.item .row .title {
+    height: 70rpx;
+    width: 100%;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-area .area .info view.item .row .card-num text {
+    width: 100%;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bg-gray .update-btn {
+    background: #ddd;
+    color: #fff;
+    border: none;
+    position: fixed;
+    bottom: 0;
+    left: 30rpx;
+    right: 30rpx;
+    height: 46px;
+}
+
+.bg-gray button::after {
+    border: none;
+}
+
+.bg-gray .uploadFile {
+    border-radius: 10rpx;
+    position: fixed;
+    bottom: 0;
+    left: 30rpx;
+    right: 30rpx;
+    height: 46px;
+}
+
+.bg-gray .uploadFile image {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.btn {
+    width: 80%;
+    padding: 20rpx 0;
+    border-radius: 10rpx;
+    text-align: center;
+    margin: 40rpx 10%;
+    background: #0c1939;
+    color: #fff;
+}
+
+/*mask*/
+
+.drawer_screen {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: #000;
+    opacity: 0.2;
+    overflow: hidden;
+}
+
+/*content*/
+
+.drawer_attr_box {
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1001;
+    background: #fff;
+    border-top-left-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+}
+
+.drawer_content {
+    padding: 67rpx 60rpx;
+    overflow-y: scroll;
+}
+
+.drawer_title {
+    font: 34rpx "PingFang-SC-Bold";
+    color: #000;
+    font-weight: Bold;
+}
+
+.drawer_info {
+    margin-top: 20rpx;
+}
+
+.drawer_info .drawer_info_name, .drawer_info .drawer_info_card {
+    display: flex;
+}
+
+.drawer_info .drawer_info_name view, .drawer_info .drawer_info_card view {
+    flex: 1;
+    font-size: 28rpx;
+    border-bottom: 1px solid #ccc;
+    height: 100rpx;
+    line-height: 100rpx;
+}
+
+.drawer_info .drawer_info_name .l, .drawer_info .drawer_info_card .l {
+    text-align: left;
+    color: #333;
+}
+
+.drawer_info .drawer_info_name .r, .drawer_info .drawer_info_card .r {
+    text-align: right;
+    color: #666;
+}
+
+.drawer_btn {
+    display: flex;
+    margin-top: 100rpx;
+    position: relative;
+}
+
+.drawer_btn view {
+    height: 90rpx;
+    line-height: 90rpx;
+    text-align: center;
+    background: #ccc;
+    font-size: 38rpx;
+    color: #fff;
+    width: 48%;
+}
+
+.drawer_btn view:nth-child(1) image {
+    background: #fff;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.drawer_btn view:nth-child(2) {
+    position: absolute;
+    right: 0;
+}
+
+.drawer_btn view:nth-child(1) text {
+    background: #f58c34;
+}
+
+.drawer_btn view text {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.drawer_btn view:nth-child(2) text.btn-ok {
+    background: #f58c34;
+}
+
+.line {
+    border-bottom: 1px solid #f8f8f8;
+}
+
+/* #F58C34 */

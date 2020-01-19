@@ -1,0 +1,165 @@
+.nav {
+    position: relative;
+    height: 45px;
+    line-height: 45px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background: #fff;
+}
+
+.nav-title {
+    height: 45px;
+    line-height: 45px;
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 36rpx;
+    color: #000;
+}
+
+.nav .back {
+    position: absolute;
+    left: 20rpx;
+    top: 50%;
+    height: 48rpx;
+    bottom: 0;
+}
+
+.nav .back image {
+    display: block;
+    width: 38rpx;
+    height: 38rpx;
+}
+
+.overflow {
+    overflow: auto;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30rpx 30rpx 50rpx 30rpx;
+    background: #f6f6f6;
+}
+
+.hidden {
+    overflow: hidden;
+}
+
+.container {
+    background: #fff;
+    border-radius: 20rpx;
+    font-family: 'PingFang-SC-Heavy';
+    padding: 51rpx 30rpx 20rpx 30rpx;
+}
+
+.container .item {
+    width: 100%;
+}
+
+.container .number {
+    color: #333;
+    font-size: 35rpx;
+    margin-bottom: 15rpx;
+}
+
+.custom-class {
+    margin-bottom: 30rpx;
+    display: flex;
+}
+
+.icon-class {
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.container .text {
+    color: #666;
+    font-size: 24rpx;
+    text-align: center;
+}
+
+.up-icon image {
+    display: block;
+    width: 45rpx;
+    height: 45rpx;
+    margin: 0 auto;
+    margin-top: 20rpx;
+}
+
+.salary {
+    border-top: 1px solid #f5f5f5;
+    padding-top: 30rpx;
+    margin-top: 30rpx;
+}
+
+.salary-item {
+    display: flex;
+    margin-bottom: 20rpx;
+    line-height: 50rpx;
+    height: 50rpx;
+}
+
+.item-icon {
+    margin-right: 10rpx;
+    padding-top: 4rpx;
+    box-sizing: border-box;
+}
+
+.item-right {
+    flex: 1;
+}
+
+.item-n {
+    display: flex;
+    font-size: 28rpx;
+}
+
+.item-n view {
+    flex: 1;
+}
+
+.item-n view:last-child {
+    text-align: right;
+    color: #999;
+}
+
+.custom-class .van-cell .van-cell__left-icon-wrap .van-icon--image {
+    width: 50rpx !important;
+    height: 31rpx !important;
+}
+
+.pay-btn {
+    margin-top: 100rpx;
+}
+
+.pay-btn image {
+    display: block;
+    width: 502rpx;
+    height: 88rpx;
+    margin: 0 auto;
+}
+
+.defaultMoney {
+    font-size: 30rpx;
+    color: #666;
+    font-family: 'PingFang-SC-Medium';
+    display: flex;
+}
+
+.defaultMoney view {
+    margin-bottom: 20rpx;
+    padding-left: 10rpx;
+    flex: 1;
+}
+.defaultMoney view:last-child {
+    text-align: right;
+}
+
+.total-money {
+    font-size: 30rpx;
+    color: #666;
+    font-family: 'PingFang-SC-Medium';
+    text-align: right;
+}

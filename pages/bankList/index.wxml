@@ -1,0 +1,175 @@
+<view>
+    <view class='nav bg-white' style='height:{{navH}}px'>
+        <view class='nav-title'>
+            银行卡列表
+        </view>
+        <view class='back'>
+            <image bindtap="handleBackClick" src="{{BASE_IMG_PATH}}back.png"></image>
+        </view>
+    </view>
+    <scroll-view class='bg-gray overflow' style='height:calc(100vh - {{navH}}px)' scroll-y>
+        <view class='hidden'>
+           <view class='title'>
+                支持的银行如下：
+           </view>
+           <view class='view-list'>
+                <view class='view-list-title'>
+                    <view>银行名称</view>
+                    <view>银行卡类型</view>
+                </view>
+                <view class='view-list-item'>
+                    <view>
+                        <image src="{{BASE_IMG_PATH}}bank-1.png"></image>
+                    </view>
+                    <view>
+                        借记卡
+                    </view>
+                </view>
+                <view class='view-list-item'>
+                    <view>
+                        <image src="{{BASE_IMG_PATH}}bank-2.png"></image>
+                    </view>
+                    <view>
+                        借记卡
+                    </view>
+                </view>
+                <view class='view-list-item'>
+                    <view>
+                        <image src="{{BASE_IMG_PATH}}bank-3.png"></image>
+                    </view>
+                    <view>
+                        借记卡
+                    </view>
+                </view>
+                <view class='view-list-item'>
+                    <view>
+                        <image src="{{BASE_IMG_PATH}}bank-4.png"></image>
+                    </view>
+                    <view>
+                        借记卡
+                    </view>
+                </view>
+                <view class='view-list-item'>
+                    <view>
+                        <image src="{{BASE_IMG_PATH}}bank-5.png"></image>
+                    </view>
+                    <view>
+                        借记卡
+                    </view>
+                </view>
+                <view class='view-list-item'>
+                    <view>
+                        <image src="{{BASE_IMG_PATH}}bank-6.png"></image>
+                    </view>
+                    <view>
+                        借记卡
+                    </view>
+                </view>
+                <view class='view-list-item'>
+                    <view>
+                        <image src="{{BASE_IMG_PATH}}bank-7.png"></image>
+                    </view>
+                    <view>
+                        借记卡
+                    </view>
+                </view>
+                <view class='view-list-item'>
+                    <view>
+                        <image src="{{BASE_IMG_PATH}}bank-8.png"></image>
+                    </view>
+                    <view>
+                        借记卡
+                    </view>
+                </view>
+                <view class='view-list-item'>
+                    <view>
+                        <image src="{{BASE_IMG_PATH}}bank-9.png"></image>
+                    </view>
+                    <view>
+                        借记卡
+                    </view>
+                </view>
+                <view class='view-list-item'>
+                    <view>
+                        <image src="{{BASE_IMG_PATH}}bank-10.png"></image>
+                    </view>
+                    <view>
+                        借记卡
+                    </view>
+                </view>
+                <view class='view-list-item'>
+                    <view>
+                        <image src="{{BASE_IMG_PATH}}bank-11.png"></image>
+                    </view>
+                    <view>
+                        借记卡
+                    </view>
+                </view>
+                <view class='view-list-item'>
+                    <view>
+                        <image src="{{BASE_IMG_PATH}}bank-12.png"></image>
+                    </view>
+                    <view>
+                        借记卡
+                    </view>
+                </view>
+                <view class='view-list-item'>
+                    <view>
+                        <image src="{{BASE_IMG_PATH}}bank-13.png"></image>
+                    </view>
+                    <view>
+                        借记卡
+                    </view>
+                </view>
+                <view class='view-list-item'>
+                    <view>
+                        <image src="{{BASE_IMG_PATH}}bank-14.png"></image>
+                    </view>
+                    <view>
+                        借记卡
+                    </view>
+                </view>
+                <view class='view-list-item'>
+                    <view>
+                        <image src="{{BASE_IMG_PATH}}bank-15.png"></image>
+                    </view>
+                    <view>
+                        借记卡
+                    </view>
+                </view>
+                <view class='view-list-item'>
+                    <view>
+                        <image src="{{BASE_IMG_PATH}}bank-16.png"></image>
+                    </view>
+                    <view>
+                        借记卡
+                    </view>
+                </view>
+                <view class='view-list-item'>
+                    <view>
+                        <image src="{{BASE_IMG_PATH}}bank-17.png"></image>
+                    </view>
+                    <view>
+                        借记卡
+                    </view>
+                </view>
+                <view class='view-list-item'>
+                    <view>
+                        <image src="{{BASE_IMG_PATH}}bank-18.png"></image>
+                    </view>
+                    <view>
+                        借记卡
+                    </view>
+                </view>
+                <view class='view-list-item'>
+                    <view>
+                        <image src="{{BASE_IMG_PATH}}bank-19.png"></image>
+                    </view>
+                    <view>
+                        借记卡
+                    </view>
+                </view>
+           </view>
+        </view>
+    </scroll-view>
+</view>

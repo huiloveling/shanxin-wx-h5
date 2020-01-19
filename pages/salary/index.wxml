@@ -1,0 +1,13 @@
+<view>
+    <view class='nav bg-white' style='height:{{navH}}px'>
+        <view class='nav-title'>
+            周薪
+        </view>
+    </view>
+    <scroll-view class='bg-gray overflow' style='height:calc(100vh - {{navH}}px)' scroll-y>
+        <view class='hidden' wx:if="{{state}}">
+            <SalaryView wx:if="{{!salaryViewShow}}" state="{{resultCode}}" msg="{{msg}}" feeState="{{feeState}}" ></SalaryView>
+            <SalaryList wx:else data="{{data}}"></SalaryList>
+        </view>
+    </scroll-view>
+</view>

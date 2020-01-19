@@ -1,0 +1,8 @@
+<view>
+    <view class='nav bg-white' style='height:{{navH}}px'>
+        <view class='nav-title'>
+            打卡
+        </view>
+    </view>
+    <view>000000</view>
+</view>

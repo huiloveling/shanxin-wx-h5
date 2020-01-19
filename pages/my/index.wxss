@@ -1,0 +1,139 @@
+.nav {
+    position: relative;
+    height: 45px;
+    line-height: 45px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background: #fff;
+}
+
+.nav-title {
+    height: 45px;
+    line-height: 45px;
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 36rpx;
+    color: #333;
+}
+
+.overflow {
+    overflow: auto;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30rpx 30rpx 50rpx 30rpx;
+    background: #f6f6f6;
+}
+
+.hidden {
+    overflow: hidden;
+}
+
+.view-user {
+    height: 234rpx;
+    background-size: 100% 100%;
+    background: #fff;
+    display: flex;
+    padding: 0 50rpx;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.view-user-logo {
+    width: 132rpx;
+    display: flex;
+    align-items: center;
+}
+
+.view-user-logo image {
+    display: block;
+    height: 132rpx;
+    width: 132rpx;
+}
+
+.view-user-info {
+    color: #fff;
+    font-size: 28rpx;
+    margin-left: 30rpx;
+    display: flex;
+    align-items: center;
+}
+
+.view-user-info .desc view {
+    height: 66rpx;
+    line-height: 66rpx;
+}
+
+.right-icon {
+    position: absolute;
+    right: 30rpx;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.right-icon image {
+    width: 31rpx;
+    height: 58rpx;
+}
+
+.view-list {
+    background: #fff;
+    margin-top: 30rpx;
+    border-radius: 15rpx;
+    padding: 0 35rpx;
+}
+
+.view-list-item {
+    position: relative;
+}
+
+.view-list-item .li {
+    display: flex;
+    height: 110rpx;
+    align-items: center;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.view-list-item .button {
+    border: none;
+    background: #fff;
+    padding-left: 0 !important;
+}
+
+.view-list-item .button::after {
+    border: none;
+}
+
+.view-list-item .li:last-child {
+    border: none;
+}
+
+.view-list-item .li image {
+    display: block;
+    width: 45rpx;
+    height: 45rpx;
+}
+
+.view-list-item .li view {
+    font-family: 'PingFang-SC-Medium';
+    color: #333;
+    font-size: 28rpx;
+    margin-left: 20rpx;
+}
+
+.icon {
+    position: absolute;
+    right: 10rpx;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.icon image {
+    display: block;
+    width: 15rpx;
+    height: 22rpx;
+}

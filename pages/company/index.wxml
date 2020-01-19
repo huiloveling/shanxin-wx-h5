@@ -1,0 +1,36 @@
+<view>
+    <view class='nav bg-white' style='height:{{navH}}px'>
+        <view class='nav-title'>
+            我的公司信息
+        </view>
+        <view class='back'>
+            <image bindtap="handleBackClick" src="{{BASE_IMG_PATH}}back.png"></image>
+        </view>
+    </view>
+    <scroll-view class='bg-gray overflow' style='height:calc(100vh - {{navH}}px)' scroll-y>
+        <view class='hidden'>
+            <view class='container'>
+                <view>
+                    <text>工作单位：</text>
+                    <text>{{companyInfo.companyName === null || companyInfo.companyName === undefined ? '' : companyInfo.companyName}}</text>
+                </view>
+                <view>
+                    <text>工作地点：</text>
+                    <text>{{companyInfo.address === null || companyInfo.address === undefined ? '' : companyInfo.address}}</text>
+                </view>
+                <view>
+                    <text>岗位：</text>
+                    <text>{{companyInfo.workJobs === null || companyInfo.workJobs === undefined ? '' : companyInfo.workJobs}}</text>
+                </view>
+                <view>
+                    <text>发薪日：</text>
+                    <text>{{companyInfo.paySalaryDate === null || companyInfo.paySalaryDate === undefined ? '' : companyInfo.paySalaryDate}}</text>
+                </view>
+                <view>
+                    <text>薪资：</text>
+                    <text>{{companyInfo.jobSalary === null || companyInfo.jobSalary === undefined ? '' : companyInfo.jobSalary}}</text>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view> 

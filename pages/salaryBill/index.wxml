@@ -1,0 +1,27 @@
+<view>
+    <view class='nav bg-white' style='height:{{navH}}px'>
+        <view class='nav-title'>
+            周薪账单
+        </view>
+        <view class='back'>
+            <image bindtap="handleBackClick" src="{{BASE_IMG_PATH}}back.png"></image>
+        </view>
+    </view>
+    <scroll-view class='bg-gray overflow' style='height:calc(100vh - {{navH}}px)' scroll-y>
+        <view class='hidden'>
+            <view class='title'>您存在待还周薪，请按照以下步骤进行还款</view>
+            <view class='bill-desc'>
+                <view>还款总金额(元)</view>
+                <view>{{data.totalAmount}}
+                    <text>(元)</text> </view>
+                <view>(包含违约金{{data.totalFee}}元）</view>
+                <view>共{{repayList.length}}笔
+                    <text bindtap="handleSalaryDel">详情>></text>
+                </view>
+            </view>
+            <view class='btn'>
+                <image bindtap="handleNavigateTo" src="{{BASE_IMG_PATH}}salary3-btn.png"></image>
+            </view>
+        </view>
+    </scroll-view>
+</view>

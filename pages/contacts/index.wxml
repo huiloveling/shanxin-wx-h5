@@ -1,0 +1,30 @@
+<view>
+    <view class='nav bg-white' style='height:{{navH}}px'>
+        <view class='nav-title'>
+            紧急联系人
+        </view>
+        <view class='back'>
+            <image bindtap="handleBackClick" src="{{BASE_IMG_PATH}}back.png"></image>
+        </view>
+    </view>
+    <scroll-view class='bg-gray overflow' style='height:calc(100vh - {{navH}}px)' scroll-y>
+        <view class='hidden'>
+            <view class='view-list'>
+                <view class='view-list-item' wx:for="{{userContacts}}" wx:key="{{index}}">
+                    <view>
+                        <text>关系:</text> <text>{{item.relation === '1' ? '工友' : item.relation === '2' ? '父亲' : item.relation === '3' ? '母亲' : item.relation === '4' ? '配偶' : '子女'}}</text>
+                    </view>
+                    <view>
+                        <text>姓名:</text> <text>{{item.name}}</text>
+                    </view>
+                    <view>
+                        <text>手机号:</text> <text>{{item.phone}}</text>
+                    </view>
+                </view>
+                <view class='btn'>
+                    <image bindtap="handleNavigateTo" src="{{BASE_IMG_PATH}}add-lxr.png"></image>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view> 

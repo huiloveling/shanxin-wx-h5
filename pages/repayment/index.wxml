@@ -1,0 +1,67 @@
+<view>
+    <view class='nav bg-white' style='height:{{navH}}px'>
+        <view class='nav-title'>
+            还款支付
+        </view>
+        <view class='back'>
+            <image bindtap="handleBackClick" src="{{BASE_IMG_PATH}}back.png"></image>
+        </view>
+    </view>
+    <scroll-view class='bg-gray overflow' style='height:calc(100vh - {{navH}}px)' scroll-y>
+        <view class='hidden'>
+            <view class='container'>
+                <view class='number'>￥{{totalAmount}}</view>
+                <view class='up-icon' wx:if="{{!showSalary}}">
+                    <image bindtap="handleUpSalaryClick" src="{{BASE_IMG_PATH}}up-icon.png"></image>
+                </view>
+                <view class='salary' style="width: 100%; display: {{showSalary ? 'block' : 'none'}}">
+                    <view class='item' wx:for="{{repayList}}" wx:key="{{index}}">
+                        <view>
+                            <text>第{{index + 1}}笔周薪：￥{{item.repayTotal}}</text>
+                            <text>{{item.applyTime}}</text>
+                        </view>
+                    </view>
+                    <view class='view'>
+                        <text>违约金：{{totalFee}}</text>
+                        <text>逾期{{overdue}}天</text>
+                    </view>
+                    <view class='up-icon' wx:if="{{showSalary}}">
+                        <image bindtap="handleUpSalaryClick" src="{{BASE_IMG_PATH}}down-icon.png"></image>
+                    </view>
+                </view>
+            </view>
+            <view class='bankCardList'>
+                <view class='title'>支付方式</view>
+                <view class='list'>
+                    <van-radio-group value="{{ radio }}" bind:change="onChange">
+                        <van-cell-group>
+                            <van-cell wx:for="{{payWayList}}" bind:click="onClick" class='custom-class' wx:key="{{index}}" icon='http://linghuijiyi.com/bank-icon.png' title="{{item.name}}" value-class="value-class" clickable data-name="{{item.code}}">
+                                <van-radio name="{{item.code}}" />
+                            </van-cell>
+                        </van-cell-group>
+                    </van-radio-group>
+                </view>
+            </view>
+            <view class='tips'>
+                <!-- <text style="color: #FB4F2F;">提示：</text> 如周薪领取失败，平台会第一时间退还服务费。 -->
+            </view>
+            <view class='pay-btn'>
+                <image bindtap="queryPayState" src="{{BASE_IMG_PATH}}pay-img.png"></image>
+            </view>
+        </view>
+    </scroll-view>
+    <van-transition show="{{ showPopup }}">
+        <view class='popupCard'>
+            <view class='container-pup'>
+                <view class='images'>
+                    <image src="{{BASE_IMG_PATH}}aws.png"></image>
+                </view>
+                <view class='desc'>您确定要放弃领还款吗？</view>
+                <view class='btn'>
+                    <view bindtap="handleToBack">以后还款</view>
+                    <view bindtap="handlePayOk" style="color: red">继续还款</view>
+                </view>
+            </view>
+        </view>
+    </van-transition>
+</view>

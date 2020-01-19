@@ -1,0 +1,35 @@
+<view>
+    <view class='nav bg-white' style='height:{{navH}}px'>
+        <view class='nav-title'>我的</view>
+    </view>
+    <scroll-view class='bg-gray overflow' style='height:calc(100vh - {{navH}}px)' scroll-y>
+        <view class='hidden'>
+            <view class='view-user' bindtap="handleNavigateTo" data-path="{{isLogin ? 'set' : 'login'}}">
+                <view class='view-user-logo'>
+                    <image src="./../../static/images/login-web.png"></image>
+                </view>
+                <view class='view-user-info'>
+                    <view class='desc' wx:if="{{isLogin}}">
+                        <view style="color: #333;">身份证姓名: {{name === null ? '' : name}}</view>
+                        <view style="color: #333;">绑定手机号: {{phone === null ? '' : phone}}</view>
+                    </view>
+                    <view wx:if="{{!isLogin}}">未登录</view>
+                </view>
+                <view class='right-icon' wx:if="{{isLogin}}">
+                    <image src="./../../static/images/rigin-icon.png"></image>
+                </view>
+            </view>
+            <view class='view-list'>
+                <view class='view-list-item' bindtap="handleNavigateTo" wx:for="{{viewlist}}" data-path="{{item.path}}" wx:key="{{index}}">
+                    <button class='li button' open-type="{{item.contact ? 'contact' : ''}}">
+                        <image src="{{item.img}}"></image>
+                        <view>{{item.name}}</view>
+                    </button>
+                    <view class='icon'>
+                        <image src="{{item.icon}}"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>
